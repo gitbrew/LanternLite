@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>model</key>
+		<string>iPod3,1</string>
+		<key>name</key>
+		<string>iPod touch 3G</string>
+		<key>usbProduct</key>
+		<string>0x1299</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>iPad2,1</string>
+		<key>name</key>
+		<string>iPad 2</string>
+		<key>usbProduct</key>
+		<string>0x129f</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>iPhone4,2</string>
+		<key>name</key>
+		<string>iPhone 4S</string>
+		<key>usbProduct</key>
+		<string>0x12a1</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>imageable</key>
+		<true/>
+		<key>model</key>
+		<string>iPhone3,2</string>
+		<key>name</key>
+		<string>iPhone 4</string>
+		<key>usbProduct</key>
+		<string>0x129b</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>iPhone1,2</string>
+		<key>name</key>
+		<string>iPhone 3G</string>
+		<key>usbProduct</key>
+		<string>0x1292</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>iPad2,2</string>
+		<key>name</key>
+		<string>iPad 2</string>
+		<key>usbProduct</key>
+		<string>0x12a2</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>iPod2,1</string>
+		<key>name</key>
+		<string>iPod touch 2G</string>
+		<key>usbProduct</key>
+		<string>0x1293</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>imageable</key>
+		<true/>
+		<key>model</key>
+		<string>iPad1,1</string>
+		<key>name</key>
+		<string>iPad</string>
+		<key>usbProduct</key>
+		<string>0x129a</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>iPad2,3</string>
+		<key>name</key>
+		<string>iPad 2</string>
+		<key>usbProduct</key>
+		<string>0x12a3</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>iPod2,2</string>
+		<key>name</key>
+		<string>iPod touch 2.5G</string>
+		<key>usbProduct</key>
+		<string>0x1296</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>iPod1,1</string>
+		<key>name</key>
+		<string>iPod touch</string>
+		<key>usbProduct</key>
+		<string>0x1291</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>iPhone4,1</string>
+		<key>name</key>
+		<string>iPhone 4S</string>
+		<key>usbProduct</key>
+		<string>0x12a0</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>imageable</key>
+		<true/>
+		<key>model</key>
+		<string>iPhone3,1</string>
+		<key>name</key>
+		<string>iPhone 4</string>
+		<key>usbProduct</key>
+		<string>0x1297</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>imageable</key>
+		<true/>
+		<key>model</key>
+		<string>iPhone3,3</string>
+		<key>name</key>
+		<string>iPhone 4</string>
+		<key>usbProduct</key>
+		<string>0x129c</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>imageable</key>
+		<true/>
+		<key>model</key>
+		<string>iPhone2,1</string>
+		<key>name</key>
+		<string>iPhone 3GS</string>
+		<key>usbProduct</key>
+		<string>0x1294</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>imageable</key>
+		<true/>
+		<key>model</key>
+		<string>iPod4,1</string>
+		<key>name</key>
+		<string>iPod touch 4G</string>
+		<key>usbProduct</key>
+		<string>0x129e</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>iPhone1,1</string>
+		<key>name</key>
+		<string>iPhone</string>
+		<key>usbProduct</key>
+		<string>0x1290</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>dfu1</string>
+		<key>name</key>
+		<string>DFU Mode - early iPhone/iPod</string>
+		<key>usbProduct</key>
+		<string>0x1222</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>dfu2</string>
+		<key>name</key>
+		<string>DFU Mode</string>
+		<key>usbProduct</key>
+		<string>0x1227</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+	<dict>
+		<key>model</key>
+		<string>recovery</string>
+		<key>name</key>
+		<string>Recovery Mode</string>
+		<key>usbProduct</key>
+		<string>0x1281</string>
+		<key>usbVendor</key>
+		<string>0x05ac</string>
+	</dict>
+</array>
+</plist>

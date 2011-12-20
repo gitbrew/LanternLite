@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		61141EFF1468C02B0064B1E4 /* PythonScripts in Resources */ = {isa = PBXBuildFile; fileRef = 61141EFD1468C02B0064B1E4 /* PythonScripts */; };
+		61141F001468C02B0064B1E4 /* RamdiskFiles in Resources */ = {isa = PBXBuildFile; fileRef = 61141EFE1468C02B0064B1E4 /* RamdiskFiles */; };
+		61141F021468C34E0064B1E4 /* iDeviceModes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61141F011468C34E0064B1E4 /* iDeviceModes.plist */; };
+		61545A28149BDA75004834B0 /* ssh.tar.gz in Resources */ = {isa = PBXBuildFile; fileRef = 61545A26149BDA75004834B0 /* ssh.tar.gz */; };
+		61545A29149BDA75004834B0 /* xpwntool in Resources */ = {isa = PBXBuildFile; fileRef = 61545A27149BDA75004834B0 /* xpwntool */; };
+		616B86401469EA08003E98BA /* KFTaskDecryptImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 616B863D1469EA08003E98BA /* KFTaskDecryptImage.m */; };
+		61772C2A14A0190A007F0E93 /* limera1n.c in Sources */ = {isa = PBXBuildFile; fileRef = 61772C1114A0190A007F0E93 /* limera1n.c */; };
+		61772C2B14A0190A007F0E93 /* steaks4uce.c in Sources */ = {isa = PBXBuildFile; fileRef = 61772C1314A0190A007F0E93 /* steaks4uce.c */; };
+		61772C2C14A0190A007F0E93 /* common.c in Sources */ = {isa = PBXBuildFile; fileRef = 61772C1614A0190A007F0E93 /* common.c */; };
+		61772C2D14A0190A007F0E93 /* libirecovery.c in Sources */ = {isa = PBXBuildFile; fileRef = 61772C1814A0190A007F0E93 /* libirecovery.c */; };
+		61772C2E14A0190A007F0E93 /* itunes_private_api.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61772C1B14A0190A007F0E93 /* itunes_private_api.cpp */; };
+		61772C2F14A0190A007F0E93 /* itunnel_log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61772C1C14A0190A007F0E93 /* itunnel_log.cpp */; };
+		61772C3014A0190A007F0E93 /* itunnel_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61772C1E14A0190A007F0E93 /* itunnel_main.cpp */; };
+		61772C3114A0190A007F0E93 /* itunnel_options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61772C2014A0190A007F0E93 /* itunnel_options.cpp */; };
+		61772C3214A0190A007F0E93 /* itunnel_recovery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61772C2214A0190A007F0E93 /* itunnel_recovery.cpp */; };
+		61772C3314A0190A007F0E93 /* libmd_error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61772C2414A0190A007F0E93 /* libmd_error.cpp */; };
+		61772C3414A0190A007F0E93 /* libmd_platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61772C2614A0190A007F0E93 /* libmd_platform.cpp */; };
+		61772C3514A0190A007F0E93 /* libMobiledevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61772C2814A0190A007F0E93 /* libMobiledevice.cpp */; };
+		6191CA6914689FF100E87917 /* MobileDevice in Frameworks */ = {isa = PBXBuildFile; fileRef = 6191CA6814689FF100E87917 /* MobileDevice */; };
+		6191CADB1468A02600E87917 /* KFTaskAcquireImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CA7F1468A02600E87917 /* KFTaskAcquireImage.m */; };
+		6191CADD1468A02600E87917 /* KFTaskAcquireKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CA831468A02600E87917 /* KFTaskAcquireKeys.m */; };
+		6191CAE41468A02600E87917 /* KFTaskBootDevice.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6191CA951468A02600E87917 /* KFTaskBootDevice.mm */; };
+		6191CB001468A02600E87917 /* DTUSBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CAC81468A02600E87917 /* DTUSBDevice.m */; };
+		6191CB011468A02600E87917 /* DTUSBMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CACA1468A02600E87917 /* DTUSBMonitor.m */; };
+		6191CB021468A02600E87917 /* KFExec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CACC1468A02600E87917 /* KFExec.m */; };
+		6191CB031468A02600E87917 /* KFIOSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CACE1468A02600E87917 /* KFIOSDevice.m */; };
+		6191CB041468A02600E87917 /* KFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CAD01468A02600E87917 /* KFTask.m */; };
+		6191CB051468A02600E87917 /* LanternLiteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CAD21468A02600E87917 /* LanternLiteAppDelegate.m */; };
+		61EDFCCE14662A9000188E91 /* Askpass in Resources */ = {isa = PBXBuildFile; fileRef = 61EDFCCD14662A9000188E91 /* Askpass */; };
+		61EF99F5148757D800BD0B0E /* libpng12.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 61EF99F4148757D800BD0B0E /* libpng12.0.dylib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E4222BD71448B96A00AA42E2 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4222BD61448B96A00AA42E2 /* Growl.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E4222BE61448B98200AA42E2 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4222BD61448B96A00AA42E2 /* Growl.framework */; };
+		E4222C371448BAE900AA42E2 /* chime.aif in Resources */ = {isa = PBXBuildFile; fileRef = E4222C361448BAE900AA42E2 /* chime.aif */; };
+		E462E7F01440EE77000A1873 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E462E7EF1440EE77000A1873 /* libcrypto.dylib */; };
+		E4BD0BA91427A54B00DC32DF /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4BD0BA81427A54B00DC32DF /* IOKit.framework */; };
+		E4C883941434EE6E002455EC /* idevices.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4C8838F1434EE6E002455EC /* idevices.plist */; };
+		E4C883A21434EE81002455EC /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C883A01434EE81002455EC /* libcurl.dylib */; };
+		E4C883A31434EE81002455EC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C883A11434EE81002455EC /* libz.dylib */; };
+		E4F00B221445D801009168D8 /* LanternLite.icns in Resources */ = {isa = PBXBuildFile; fileRef = E4F00B211445D801009168D8 /* LanternLite.icns */; };
+		E4FA67E91456FFD90005F1B1 /* kf-libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FA67E81456FFD90005F1B1 /* kf-libusb-1.0.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4222BEF1448B9A000AA42E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E4222BE61448B98200AA42E2 /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* LanternLite_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanternLite_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		61141EFD1468C02B0064B1E4 /* PythonScripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PythonScripts; path = Resources/PythonScripts; sourceTree = "<group>"; };
+		61141EFE1468C02B0064B1E4 /* RamdiskFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RamdiskFiles; path = Resources/RamdiskFiles; sourceTree = "<group>"; };
+		61141F011468C34E0064B1E4 /* iDeviceModes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = iDeviceModes.plist; path = Resources/iDeviceModes.plist; sourceTree = "<group>"; };
+		61545A26149BDA75004834B0 /* ssh.tar.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = ssh.tar.gz; path = Resources/ssh.tar.gz; sourceTree = "<group>"; };
+		61545A27149BDA75004834B0 /* xpwntool */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = xpwntool; path = Resources/xpwntool; sourceTree = "<group>"; };
+		616B863C1469EA08003E98BA /* KFTaskDecryptImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFTaskDecryptImage.h; sourceTree = "<group>"; };
+		616B863D1469EA08003E98BA /* KFTaskDecryptImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFTaskDecryptImage.m; sourceTree = "<group>"; };
+		61772C1014A0190A007F0E93 /* exploits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exploits.h; sourceTree = "<group>"; };
+		61772C1114A0190A007F0E93 /* limera1n.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = limera1n.c; sourceTree = "<group>"; };
+		61772C1214A0190A007F0E93 /* limera1n.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = limera1n.h; sourceTree = "<group>"; };
+		61772C1314A0190A007F0E93 /* steaks4uce.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = steaks4uce.c; sourceTree = "<group>"; };
+		61772C1414A0190A007F0E93 /* steaks4uce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = steaks4uce.h; sourceTree = "<group>"; };
+		61772C1614A0190A007F0E93 /* common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = common.c; sourceTree = "<group>"; };
+		61772C1714A0190A007F0E93 /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		61772C1814A0190A007F0E93 /* libirecovery.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = libirecovery.c; sourceTree = "<group>"; };
+		61772C1914A0190A007F0E93 /* libirecovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libirecovery.h; sourceTree = "<group>"; };
+		61772C1B14A0190A007F0E93 /* itunes_private_api.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = itunes_private_api.cpp; sourceTree = "<group>"; };
+		61772C1C14A0190A007F0E93 /* itunnel_log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = itunnel_log.cpp; sourceTree = "<group>"; };
+		61772C1D14A0190A007F0E93 /* itunnel_log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itunnel_log.h; sourceTree = "<group>"; };
+		61772C1E14A0190A007F0E93 /* itunnel_main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = itunnel_main.cpp; sourceTree = "<group>"; };
+		61772C1F14A0190A007F0E93 /* itunnel_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itunnel_main.h; sourceTree = "<group>"; };
+		61772C2014A0190A007F0E93 /* itunnel_options.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = itunnel_options.cpp; sourceTree = "<group>"; };
+		61772C2114A0190A007F0E93 /* itunnel_options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itunnel_options.h; sourceTree = "<group>"; };
+		61772C2214A0190A007F0E93 /* itunnel_recovery.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = itunnel_recovery.cpp; sourceTree = "<group>"; };
+		61772C2314A0190A007F0E93 /* itunnel_recovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itunnel_recovery.h; sourceTree = "<group>"; };
+		61772C2414A0190A007F0E93 /* libmd_error.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libmd_error.cpp; sourceTree = "<group>"; };
+		61772C2514A0190A007F0E93 /* libmd_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libmd_error.h; sourceTree = "<group>"; };
+		61772C2614A0190A007F0E93 /* libmd_platform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libmd_platform.cpp; sourceTree = "<group>"; };
+		61772C2714A0190A007F0E93 /* libmd_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libmd_platform.h; sourceTree = "<group>"; };
+		61772C2814A0190A007F0E93 /* libMobiledevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libMobiledevice.cpp; sourceTree = "<group>"; };
+		61772C2914A0190A007F0E93 /* libMobiledevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libMobiledevice.h; sourceTree = "<group>"; };
+		6191CA6814689FF100E87917 /* MobileDevice */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = MobileDevice; path = /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice; sourceTree = "<absolute>"; };
+		6191CA7E1468A02600E87917 /* KFTaskAcquireImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFTaskAcquireImage.h; sourceTree = "<group>"; };
+		6191CA7F1468A02600E87917 /* KFTaskAcquireImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFTaskAcquireImage.m; sourceTree = "<group>"; };
+		6191CA821468A02600E87917 /* KFTaskAcquireKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFTaskAcquireKeys.h; sourceTree = "<group>"; };
+		6191CA831468A02600E87917 /* KFTaskAcquireKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFTaskAcquireKeys.m; sourceTree = "<group>"; };
+		6191CA941468A02600E87917 /* KFTaskBootDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFTaskBootDevice.h; sourceTree = "<group>"; };
+		6191CA951468A02600E87917 /* KFTaskBootDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KFTaskBootDevice.mm; sourceTree = "<group>"; };
+		6191CAC71468A02600E87917 /* DTUSBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTUSBDevice.h; sourceTree = "<group>"; };
+		6191CAC81468A02600E87917 /* DTUSBDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTUSBDevice.m; sourceTree = "<group>"; };
+		6191CAC91468A02600E87917 /* DTUSBMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTUSBMonitor.h; sourceTree = "<group>"; };
+		6191CACA1468A02600E87917 /* DTUSBMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTUSBMonitor.m; sourceTree = "<group>"; };
+		6191CACB1468A02600E87917 /* KFExec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFExec.h; sourceTree = "<group>"; };
+		6191CACC1468A02600E87917 /* KFExec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFExec.m; sourceTree = "<group>"; };
+		6191CACD1468A02600E87917 /* KFIOSDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFIOSDevice.h; sourceTree = "<group>"; };
+		6191CACE1468A02600E87917 /* KFIOSDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFIOSDevice.m; sourceTree = "<group>"; };
+		6191CACF1468A02600E87917 /* KFTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFTask.h; sourceTree = "<group>"; };
+		6191CAD01468A02600E87917 /* KFTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFTask.m; sourceTree = "<group>"; };
+		6191CAD11468A02600E87917 /* LanternLiteAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanternLiteAppDelegate.h; sourceTree = "<group>"; };
+		6191CAD21468A02600E87917 /* LanternLiteAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanternLiteAppDelegate.m; sourceTree = "<group>"; };
+		61EDFCCD14662A9000188E91 /* Askpass */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = Askpass; path = Resources/Askpass; sourceTree = "<group>"; };
+		61EF99F4148757D800BD0B0E /* libpng12.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng12.0.dylib; path = /usr/X11/lib/libpng12.0.dylib; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* LanternLite-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LanternLite-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* LanternLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanternLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4222BD61448B96A00AA42E2 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		E4222C361448BAE900AA42E2 /* chime.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = chime.aif; sourceTree = "<group>"; };
+		E462E7EF1440EE77000A1873 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
+		E4BD0BA81427A54B00DC32DF /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		E4C883671434EE55002455EC /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		E4C883681434EE55002455EC /* darwin_usb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = darwin_usb.h; sourceTree = "<group>"; };
+		E4C8836A1434EE55002455EC /* libusb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libusb.h; sourceTree = "<group>"; };
+		E4C8836B1434EE55002455EC /* libusbi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libusbi.h; sourceTree = "<group>"; };
+		E4C8836C1434EE55002455EC /* poll_posix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = poll_posix.h; sourceTree = "<group>"; };
+		E4C8836D1434EE55002455EC /* threads_posix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = threads_posix.h; sourceTree = "<group>"; };
+		E4C8838F1434EE6E002455EC /* idevices.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = idevices.plist; path = Resources/idevices.plist; sourceTree = "<group>"; };
+		E4C883A01434EE81002455EC /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = /usr/lib/libcurl.dylib; sourceTree = "<absolute>"; };
+		E4C883A11434EE81002455EC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
+		E4F00B211445D801009168D8 /* LanternLite.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = LanternLite.icns; sourceTree = "<group>"; };
+		E4FA67E81456FFD90005F1B1 /* kf-libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "kf-libusb-1.0.a"; path = "Dependencies/kf-libusb-1.0.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61EF99F5148757D800BD0B0E /* libpng12.0.dylib in Frameworks */,
+				6191CA6914689FF100E87917 /* MobileDevice in Frameworks */,
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				E4BD0BA91427A54B00DC32DF /* IOKit.framework in Frameworks */,
+				E4C883A21434EE81002455EC /* libcurl.dylib in Frameworks */,
+				E4C883A31434EE81002455EC /* libz.dylib in Frameworks */,
+				E462E7F01440EE77000A1873 /* libcrypto.dylib in Frameworks */,
+				E4222BD71448B96A00AA42E2 /* Growl.framework in Frameworks */,
+				E4FA67E91456FFD90005F1B1 /* kf-libusb-1.0.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6191CA7C1468A02600E87917 /* LanternLite */,
+				E4C883661434EE55002455EC /* Dependencies */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				61EF99F4148757D800BD0B0E /* libpng12.0.dylib */,
+				E4222BD61448B96A00AA42E2 /* Growl.framework */,
+				6191CA6814689FF100E87917 /* MobileDevice */,
+				E4FA67E81456FFD90005F1B1 /* kf-libusb-1.0.a */,
+				E462E7EF1440EE77000A1873 /* libcrypto.dylib */,
+				E4C883A01434EE81002455EC /* libcurl.dylib */,
+				E4C883A11434EE81002455EC /* libz.dylib */,
+				E4BD0BA81427A54B00DC32DF /* IOKit.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* LanternLite.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* LanternLite */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = LanternLite;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3F00F4B6AF500CF3369 /* LanternLite_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				61141EFD1468C02B0064B1E4 /* PythonScripts */,
+				61141EFE1468C02B0064B1E4 /* RamdiskFiles */,
+				61EDFCCD14662A9000188E91 /* Askpass */,
+				61545A26149BDA75004834B0 /* ssh.tar.gz */,
+				61545A27149BDA75004834B0 /* xpwntool */,
+				E4222C361448BAE900AA42E2 /* chime.aif */,
+				E4F00B211445D801009168D8 /* LanternLite.icns */,
+				E4C8838F1434EE6E002455EC /* idevices.plist */,
+				8D1107310486CEB800E47090 /* LanternLite-Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				61141F011468C34E0064B1E4 /* iDeviceModes.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		616B863B1469EA08003E98BA /* DecryptionTasks */ = {
+			isa = PBXGroup;
+			children = (
+				616B863C1469EA08003E98BA /* KFTaskDecryptImage.h */,
+				616B863D1469EA08003E98BA /* KFTaskDecryptImage.m */,
+			);
+			path = DecryptionTasks;
+			sourceTree = "<group>";
+		};
+		61772C0F14A0190A007F0E93 /* exploits */ = {
+			isa = PBXGroup;
+			children = (
+				61772C1014A0190A007F0E93 /* exploits.h */,
+				61772C1114A0190A007F0E93 /* limera1n.c */,
+				61772C1214A0190A007F0E93 /* limera1n.h */,
+				61772C1314A0190A007F0E93 /* steaks4uce.c */,
+				61772C1414A0190A007F0E93 /* steaks4uce.h */,
+			);
+			path = exploits;
+			sourceTree = "<group>";
+		};
+		61772C1514A0190A007F0E93 /* libirecovery */ = {
+			isa = PBXGroup;
+			children = (
+				61772C1614A0190A007F0E93 /* common.c */,
+				61772C1714A0190A007F0E93 /* common.h */,
+				61772C1814A0190A007F0E93 /* libirecovery.c */,
+				61772C1914A0190A007F0E93 /* libirecovery.h */,
+			);
+			path = libirecovery;
+			sourceTree = "<group>";
+		};
+		61772C1A14A0190A007F0E93 /* libmd */ = {
+			isa = PBXGroup;
+			children = (
+				61772C1B14A0190A007F0E93 /* itunes_private_api.cpp */,
+				61772C1C14A0190A007F0E93 /* itunnel_log.cpp */,
+				61772C1D14A0190A007F0E93 /* itunnel_log.h */,
+				61772C1E14A0190A007F0E93 /* itunnel_main.cpp */,
+				61772C1F14A0190A007F0E93 /* itunnel_main.h */,
+				61772C2014A0190A007F0E93 /* itunnel_options.cpp */,
+				61772C2114A0190A007F0E93 /* itunnel_options.h */,
+				61772C2214A0190A007F0E93 /* itunnel_recovery.cpp */,
+				61772C2314A0190A007F0E93 /* itunnel_recovery.h */,
+				61772C2414A0190A007F0E93 /* libmd_error.cpp */,
+				61772C2514A0190A007F0E93 /* libmd_error.h */,
+				61772C2614A0190A007F0E93 /* libmd_platform.cpp */,
+				61772C2714A0190A007F0E93 /* libmd_platform.h */,
+				61772C2814A0190A007F0E93 /* libMobiledevice.cpp */,
+				61772C2914A0190A007F0E93 /* libMobiledevice.h */,
+			);
+			path = libmd;
+			sourceTree = "<group>";
+		};
+		6191CA7C1468A02600E87917 /* LanternLite */ = {
+			isa = PBXGroup;
+			children = (
+				6191CA841468A02600E87917 /* BootDeviceTasks */,
+				6191CA7D1468A02600E87917 /* AcquisitionTasks */,
+				616B863B1469EA08003E98BA /* DecryptionTasks */,
+				6191CAC71468A02600E87917 /* DTUSBDevice.h */,
+				6191CAC81468A02600E87917 /* DTUSBDevice.m */,
+				6191CAC91468A02600E87917 /* DTUSBMonitor.h */,
+				6191CACA1468A02600E87917 /* DTUSBMonitor.m */,
+				6191CACB1468A02600E87917 /* KFExec.h */,
+				6191CACC1468A02600E87917 /* KFExec.m */,
+				6191CACD1468A02600E87917 /* KFIOSDevice.h */,
+				6191CACE1468A02600E87917 /* KFIOSDevice.m */,
+				6191CACF1468A02600E87917 /* KFTask.h */,
+				6191CAD01468A02600E87917 /* KFTask.m */,
+				6191CAD11468A02600E87917 /* LanternLiteAppDelegate.h */,
+				6191CAD21468A02600E87917 /* LanternLiteAppDelegate.m */,
+			);
+			path = LanternLite;
+			sourceTree = "<group>";
+		};
+		6191CA7D1468A02600E87917 /* AcquisitionTasks */ = {
+			isa = PBXGroup;
+			children = (
+				6191CA7E1468A02600E87917 /* KFTaskAcquireImage.h */,
+				6191CA7F1468A02600E87917 /* KFTaskAcquireImage.m */,
+				6191CA821468A02600E87917 /* KFTaskAcquireKeys.h */,
+				6191CA831468A02600E87917 /* KFTaskAcquireKeys.m */,
+			);
+			path = AcquisitionTasks;
+			sourceTree = "<group>";
+		};
+		6191CA841468A02600E87917 /* BootDeviceTasks */ = {
+			isa = PBXGroup;
+			children = (
+				6191CA941468A02600E87917 /* KFTaskBootDevice.h */,
+				6191CA951468A02600E87917 /* KFTaskBootDevice.mm */,
+			);
+			path = BootDeviceTasks;
+			sourceTree = "<group>";
+		};
+		E4C883661434EE55002455EC /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				61772C0F14A0190A007F0E93 /* exploits */,
+				61772C1514A0190A007F0E93 /* libirecovery */,
+				61772C1A14A0190A007F0E93 /* libmd */,
+				E4C883671434EE55002455EC /* config.h */,
+				E4C883681434EE55002455EC /* darwin_usb.h */,
+				E4C8836A1434EE55002455EC /* libusb.h */,
+				E4C8836B1434EE55002455EC /* libusbi.h */,
+				E4C8836C1434EE55002455EC /* poll_posix.h */,
+				E4C8836D1434EE55002455EC /* threads_posix.h */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* LanternLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "LanternLite" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				E4222BEF1448B9A000AA42E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LanternLite;
+			productInstallPath = "$(HOME)/Applications";
+			productName = LanternLite;
+			productReference = 8D1107320486CEB800E47090 /* LanternLite.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "LanternLite" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* LanternLite */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* LanternLite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				E4C883941434EE6E002455EC /* idevices.plist in Resources */,
+				E4F00B221445D801009168D8 /* LanternLite.icns in Resources */,
+				E4222C371448BAE900AA42E2 /* chime.aif in Resources */,
+				61EDFCCE14662A9000188E91 /* Askpass in Resources */,
+				61141EFF1468C02B0064B1E4 /* PythonScripts in Resources */,
+				61141F001468C02B0064B1E4 /* RamdiskFiles in Resources */,
+				61141F021468C34E0064B1E4 /* iDeviceModes.plist in Resources */,
+				61545A28149BDA75004834B0 /* ssh.tar.gz in Resources */,
+				61545A29149BDA75004834B0 /* xpwntool in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				6191CADB1468A02600E87917 /* KFTaskAcquireImage.m in Sources */,
+				6191CADD1468A02600E87917 /* KFTaskAcquireKeys.m in Sources */,
+				6191CAE41468A02600E87917 /* KFTaskBootDevice.mm in Sources */,
+				6191CB001468A02600E87917 /* DTUSBDevice.m in Sources */,
+				6191CB011468A02600E87917 /* DTUSBMonitor.m in Sources */,
+				6191CB021468A02600E87917 /* KFExec.m in Sources */,
+				6191CB031468A02600E87917 /* KFIOSDevice.m in Sources */,
+				6191CB041468A02600E87917 /* KFTask.m in Sources */,
+				6191CB051468A02600E87917 /* LanternLiteAppDelegate.m in Sources */,
+				616B86401469EA08003E98BA /* KFTaskDecryptImage.m in Sources */,
+				61772C2A14A0190A007F0E93 /* limera1n.c in Sources */,
+				61772C2B14A0190A007F0E93 /* steaks4uce.c in Sources */,
+				61772C2C14A0190A007F0E93 /* common.c in Sources */,
+				61772C2D14A0190A007F0E93 /* libirecovery.c in Sources */,
+				61772C2E14A0190A007F0E93 /* itunes_private_api.cpp in Sources */,
+				61772C2F14A0190A007F0E93 /* itunnel_log.cpp in Sources */,
+				61772C3014A0190A007F0E93 /* itunnel_main.cpp in Sources */,
+				61772C3114A0190A007F0E93 /* itunnel_options.cpp in Sources */,
+				61772C3214A0190A007F0E93 /* itunnel_recovery.cpp in Sources */,
+				61772C3314A0190A007F0E93 /* libmd_error.cpp in Sources */,
+				61772C3414A0190A007F0E93 /* libmd_platform.cpp in Sources */,
+				61772C3514A0190A007F0E93 /* libMobiledevice.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDD58150DA1D0A300B32029 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LanternLite_Prefix.pch;
+				HEADER_SEARCH_PATHS = "\"/usr/X11R6/include\"";
+				INFOPLIST_FILE = "LanternLite-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Dependencies\"",
+					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/MobileDevice.framework/Versions/A\"",
+					/usr/X11/lib,
+				);
+				PRODUCT_NAME = LanternLite;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = LanternLite_Prefix.pch;
+				HEADER_SEARCH_PATHS = "\"/usr/X11R6/include\"";
+				INFOPLIST_FILE = "LanternLite-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Dependencies\"",
+					"\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/MobileDevice.framework/Versions/A\"",
+					/usr/X11/lib,
+				);
+				PRODUCT_NAME = LanternLite;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "LanternLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "LanternLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

@@ -1,0 +1,9 @@
+Acknowledgements:
+
+Our sincere thanks goes out to all of those who have spent the long hours in research and development, and released their efforts publicly for all to enjoy. The following individuals and teams have contributed code or ideas that have been incorporated into our tool:
+
+Jean-Baptiste Bedrune and Jean Sigwald (iphone-dataprotection) - http://code.google.com/p/iphone-dataprotection/
+Dev-Team (redsn0w) - http://blog.iphone-dev.org/
+Chronic Dev (greenpois0n, libirecovery) - http://chronic-dev.org/blog/
+msftguy, novi (iphone_tunnel) - http://code.google.com/p/iphonetunnel-usbmuxconnectbyport/
+
