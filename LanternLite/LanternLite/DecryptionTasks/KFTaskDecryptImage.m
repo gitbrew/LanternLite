@@ -76,7 +76,7 @@
 	
 	[self notifyBeginSubtask:@"Decrypting Image" indefinite:YES];
 
-	NSArray * emfDecrypterArgs = [[outFile path] componentsSeparatedByString:@" "];
+	NSArray * emfDecrypterArgs = [NSArray arrayWithObject:[outFile path]];
 	emfDecrypterExec = [[KFExec alloc] initWithBundledPythonScript:@"emf_decrypter" arguments:emfDecrypterArgs];
 	
 	// Set up logging
