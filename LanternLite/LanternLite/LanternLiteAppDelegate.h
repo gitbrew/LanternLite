@@ -38,10 +38,9 @@
 	BOOL optionImageDataPartition;
 	BOOL optionDecryptImage;
 
-	BOOL ignoreUSBStateChanges;
-	BOOL imaging;
-
-	NSMutableArray * devices;
+	BOOL ignoreUSBStateChange;
+	
+	KFIOSDevice * device;
 	NSMutableArray * taskQueue;
 
 	KFExec * usbMuxTask;
@@ -54,7 +53,8 @@
 @property (assign) BOOL optionRetrieveKeys;
 @property (assign) BOOL optionImageDataPartition;
 @property (assign) BOOL optionDecryptImage;
-@property (nonatomic, retain) NSMutableArray * devices;
+@property (assign) BOOL ignoreUSBStateChange;
+@property (retain) KFIOSDevice * device;
 @property (nonatomic, retain) NSMutableArray * taskQueue;
 
 -(IBAction)testButton:(id)sender;

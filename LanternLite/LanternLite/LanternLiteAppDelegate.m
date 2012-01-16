@@ -17,338 +17,15 @@
 @implementation LanternLiteAppDelegate
 
 @synthesize acquisitionWindow;
-@synthesize devices;
+@synthesize device;
 @synthesize taskQueue;
 @synthesize optionBootDevice;
 @synthesize optionRetrieveKeys;
 @synthesize optionImageDataPartition;
 @synthesize optionDecryptImage;
+@synthesize ignoreUSBStateChange;
 @synthesize acquisitionOptionsAccessoryView;
 
-// for C-callback progress stuff only; hack
-KFTask * s_bootTask = nil;
-void setProgressTaskName(const char * taskName)
-{
-	if(s_bootTask)
-	{
-		[s_bootTask notifyBeginSubtask:[NSString stringWithUTF8String:taskName] indefinite:YES];
-	}
-}
-//
-
-# pragma mark USB Stuff
-
--(KFIOSDevice *)attachedDevice
-{
-	KFIOSDevice * attachedDevice = nil;
-
-	int nAttached = 0;
-	for(KFIOSDevice * device in devices)
-	{
-		if(device.attached) 
-		{
-			nAttached++;
-			attachedDevice = device;
-		}
-	}
-	
-	if(nAttached == 1) return attachedDevice;
-	return nil;
-}
-
-// updates text in the main UI window
--(void)updateUSBAttachedState
-{
-	KFIOSDevice * attachedDevice = nil;
-	
-	int nAttached = 0;
-	for(KFIOSDevice * device in devices)
-	{
-		if(device.attached) 
-		{
-			nAttached++;
-			attachedDevice = device;
-		}
-	}
-
-	if(ignoreUSBStateChanges)
-	{
-		if(nAttached == 0)
-		{
-			[textView setString:@"Waiting for device"];
-		}
-		else if(nAttached == 1)
-		{
-			[textView setString:@"Working"];
-		}
-		else
-		{
-			[textView setString:@"Too many iOS devices connected; please connect only one at a time."];
-		}
-		return;
-	}
-	
-	if(nAttached == 0)
-	{
-		[textView setString:@"No iOS devices connected\nPlease connect the device for identification."];
-		[rightButton setEnabled:NO];
-	}
-	else if(nAttached > 1)
-	{
-		[textView setString:@"Too many iOS devices connected; please connect only one at a time."];
-		[rightButton setEnabled:NO];
-	}
-	else
-	{
-		KFIOSDevice * device = attachedDevice;
-		
-		NSMutableString * text = [NSMutableString string];
-		[text appendFormat:@"Device: %@ (%@) connected\n",
-		 device.name, device.model];
-		
-		if(device.imageable)
-		{	
-			// REMOVED FOR TEMP iOS5
-			/*
-			if(device.identified && device.mode == MODE_DFU)
-			{
-				[text appendFormat:@"DFU mode has been successfully entered\n"];
-				[text appendFormat:@"Press NEXT to proceed\n"];
-				[rightButton setEnabled:YES];
-			}
-			else if(device.identified && device.mode == MODE_RECOVERY)
-			{
-				[text appendFormat:@"The attached device is in recovery mode. Try the procedure again to put the device into DFU mode.\n"];
-			}
-			else if(device.identified && device.mode == MODE_NORMAL)
-			{
-				[text appendFormat:@"This device can be imaged\n"];
-				[text appendFormat:@"Keep the device connected to the same USB port, and enter DFU mode as follows.\n"];
-				[text appendFormat:@"\n"];
-				[text appendFormat:@"1) Begin with the device connected and powered up\n"];
-				[text appendFormat:@"2) Read below and then keep your eyes on the device\n"];
-				[text appendFormat:@"3) Hold the top sleep/wake button and the home button simultaneously until the device powers off\n"];
-				[text appendFormat:@"4) Once screen is black, count 3 seconds\n"];
-				[text appendFormat:@"5) Release the top button\n"];
-				[text appendFormat:@"6) Count 7 seconds\n"];
-				[text appendFormat:@"7) Release the home button\n"];
-			}
-			*/
-			[text appendFormat:@"This device can be imaged\n"];
-			[text appendFormat:@"Press NEXT to proceed\n"];
-			[rightButton setEnabled:YES];
-		}
-		else
-		{
-			if(device.identified)
-			{
-				[text appendFormat:@"The attached device is not yet supported.\n"];
-			}
-			else
-			{
-				if(device.mode == MODE_DFU)
-				{
-					[text appendFormat:@"The attached device is in DFU mode but has not yet been identified. Restart the device so it may be identified first. Hold down both buttons until this shows no devices connected.\n"];
-				}
-				else if(device.mode == MODE_RECOVERY)
-				{
-					[text appendFormat:@"The attached device is in recovery mode. Restart the device so it may be identified and then placed into DFU mode.\n"];
-				}
-			}
-		}
-		
-		[textView setString:text];
-	}
-}
-
--(KFIOSDevice *)iosDeviceMatchingUSB:(DTUSBDevice *)theDevice
-{
-	for(KFIOSDevice * device in devices)
-	{
-		if(device.usbLocation == theDevice.location)
-		{
-			return device;
-		}
-	}
-	return nil;
-}
-
--(void)usbDeviceRemoved:(DTUSBDevice *)theDevice
-{
-	KFIOSDevice * device = [self iosDeviceMatchingUSB:theDevice];
-	if(device)
-	{
-		NSLog(@"disconnected device %@", device.name);
-		device.usbDevice = nil;
-		device.attached = NO;
-		device.mode = MODE_INVALID;
-	}
-	[self updateUSBAttachedState];
-}
-
--(NSUInteger)prodFieldToInteger:(id)obj
-{
-	if([obj isKindOfClass:[NSString class]])
-	{
-		unsigned int product = 0;
-		NSString * s = [obj lowercaseString];
-		if([s hasPrefix:@"0x"])
-		{
-			NSScanner * scanner = [NSScanner scannerWithString:[s substringFromIndex:2]];
-			[scanner scanHexInt:&product];
-		}
-		else
-		{
-			product = [obj intValue];
-		}
-		return product;
-	}
-	else if([obj isKindOfClass:[NSNumber class]])
-	{
-		return [obj intValue];
-	}
-	return 0;
-}
-
--(NSDictionary *)identifyDeviceType:(DTUSBDevice *)theDevice
-{
-	NSString * path = [[NSBundle mainBundle] pathForResource:@"idevices" ofType:@"plist"];
-	NSArray * knownDevices = [NSArray arrayWithContentsOfFile:path];
-	for(NSDictionary * entry in knownDevices)
-	{
-		id prodField = [entry valueForKey:@"usbProduct"];
-		id vendorField = [entry valueForKey:@"usbVendor"];
-		
-		NSUInteger product = [self prodFieldToInteger:prodField];
-		NSUInteger vendor = [self prodFieldToInteger:vendorField];
-		
-		if(product == theDevice.product && vendor == theDevice.vendor)
-		{
-			return entry;
-		}
-	}
-	
-	return nil;
-}
-
--(NSDictionary *)parseDFUVersion:(NSString *)vstring
-{
-	NSMutableDictionary * dict = [NSMutableDictionary dictionary];
-	
-	NSCharacterSet * cset = [NSCharacterSet characterSetWithCharactersInString:@"[] "];
-	NSArray * blocks = [vstring componentsSeparatedByString:@" "];
-	for(NSString * block in blocks)
-	{
-		NSArray * els = [block componentsSeparatedByString:@":"];
-		if([els count] == 2)
-		{
-			NSString * key = [els objectAtIndex:0];
-			NSString * val = [els objectAtIndex:1];
-			if(val) val = [val stringByTrimmingCharactersInSet:cset];
-			if([key length] && [val length])
-			{
-				[dict setValue:val forKey:key];
-			}
-		}
-	}
-	return dict;
-}
-
-//NSLog(@"added: %@", device);
-// DFU mode: Apple Mobile Device (DFU Mode): 1452,4647 @ 0xfd130000 sn CPID:8920 CPRV:15 CPFM:03 SCEP:03 BDID:00 ECID:000003033A056DCE SRTG:[iBoot-359.3.2]
-// Apple Mobile Device (DFU Mode): 1452,4647 @ 0xfd130000 sn CPID:8920 CPRV:14 CPFM:03 SCEP:01 BDID:00 ECID:000000DBCA083DF6 SRTG:[iBoot-359.3]
-
-// recovery mode:
-// Apple Mobile Device (Recovery Mode): 1452,4737 @ 0xfd130000 sn CPID:8920 CPRV:15 CPFM:03 SCEP:03 BDID:00 ECID:000003033A056DCE IBFL:01 SRNM:[86942J7F3NQ] IMEI:[012026006240395]
-
-// iPod touch 1G USB DFU mode
-// USB DFU Device: 1452,4642 @ 0xfd130000 sn 89000000000001
-
-// iPhone 3G in USB DFU mode
-// USB DFU Device: 1452,4642 @ 0xfd130000 sn 89000000000001
-
-// Note: iPodtouch1G,iPhone,iPhone3G all share this older iBoot/DFU mode
-
--(void)usbDeviceAdded:(DTUSBDevice *)theDevice
-{
-	KFIOSDevice * existingDevice = [self iosDeviceMatchingUSB:theDevice];		// find saved entry by USB location
-	NSDictionary * deviceType = [self identifyDeviceType:theDevice];
-	if(deviceType == nil)  // not an iOS device
-	{
-		if(existingDevice)
-		{
-			// port has been re-used by another device
-			[devices removeObject:existingDevice];
-		}
-	}
-	else
-	{
-		NSString * model = [deviceType valueForKey:@"model"];
-		NSString * name = [deviceType valueForKey:@"name"];
-		NSNumber * imageable = [deviceType valueForKey:@"imageable"];
-		
-		if([model hasPrefix:@"dfu"] && existingDevice)
-		{
-			existingDevice.usbDevice = theDevice;
-			existingDevice.mode = MODE_DFU;
-			existingDevice.attached = YES;
-			
-			NSDictionary * info = [self parseDFUVersion:theDevice.serial];
-			if(info)
-			{
-				existingDevice.dfuInfo = info;
-				NSLog(@"%@", info);
-			}
-		}
-		else if([model hasPrefix:@"recovery"] && existingDevice)
-		{
-			existingDevice.usbDevice = theDevice;
-			existingDevice.mode = MODE_RECOVERY;
-			existingDevice.attached = YES;
-		}
-		else
-		{
-			if(existingDevice) [devices removeObject:existingDevice];
-			
-			KFIOSDevice * matchByUdid = nil;
-			for(KFIOSDevice * dev in devices)
-			{
-				if([dev.udid isEqualToString:theDevice.serial])
-				{
-					matchByUdid = dev;
-					break;
-				}
-			}
-			if(matchByUdid) [devices removeObject:matchByUdid];
-			
-			KFIOSDevice * device = [[[KFIOSDevice alloc] init] autorelease];
-			device.mode = MODE_NORMAL;
-			
-			if([model hasPrefix:@"dfu"])
-			{
-				device.mode = MODE_DFU;
-			}
-			else if([model hasPrefix:@"recovery"])
-			{
-				device.mode = MODE_RECOVERY;
-			}
-			else
-			{
-				device.identified = YES;
-			}
-
-			device.model = model;
-			device.udid = theDevice.serial;
-			device.name = name;
-			device.imageable = [imageable boolValue];
-			device.usbDevice = theDevice;
-			device.usbLocation = theDevice.location;
-			device.attached = YES;
-			[devices addObject:device];
-		}
-	}
-	[self updateUSBAttachedState];
-}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {	
@@ -368,17 +45,16 @@ void setProgressTaskName(const char * taskName)
 	self.optionImageDataPartition = YES;
 	self.optionDecryptImage = YES;
 	
-	self.devices = [NSMutableArray array];
-	
 	[rightButton setEnabled:NO];
 	[cancelButton setEnabled:NO];
 	
 	[[DTUSBMonitor alloc] initWithVendor:0 product:0 delegate:self];
+	self.device = [[[KFIOSDevice alloc] init] autorelease];
 	
 	[testButton setHidden:YES];
 }
 
-# pragma mark UI
+# pragma mark - UI -
 
 -(IBAction)testButton:(id)sender
 {
@@ -400,9 +76,10 @@ void setProgressTaskName(const char * taskName)
 
 -(IBAction)rightButton:(id)sender
 {
-	KFIOSDevice * theDevice = [self attachedDevice];
-	if(theDevice)
+	if([KFIOSDevice checkDFUModeDevice:device.usbDevice])
 	{
+		ignoreUSBStateChange = YES;
+	
 		// get the current date/time in a format we can name a directory
 		NSDate * rightNow = [NSDate date];
 		NSDateFormatter * dirNameFormat = [[[NSDateFormatter alloc] init] autorelease];
@@ -436,25 +113,66 @@ void setProgressTaskName(const char * taskName)
 					}
 					else
 					{
-						[self queueTasks:theDevice targetDir:url];
+						[self queueTasks:device targetDir:url];
 					}
 				}];
 			}
 			else
 			{
-				[self queueTasks:theDevice targetDir:url];
+				[self queueTasks:device targetDir:url];
 			}
 		}
 	}		
 }
 
-- (void)resetUI
+// updates text in the main UI window
+-(void)uiUpdateOnUSBStateChange
+{
+	NSMutableString * text = [NSMutableString string];
+	if(!ignoreUSBStateChange)
+	{
+		if(!device.usbDevice)
+		{
+			[text appendFormat:@"Please connect a compatible iOS device to computer and enter DFU mode as follows:\n"];
+			[text appendFormat:@"\n"];
+			[text appendFormat:@"1) Power off the device (please wait for the device to shut down completely!)\n"];
+			[text appendFormat:@"2) Hold the Power button for 3 seconds\n"];
+			[text appendFormat:@"3) Keeping the Power button held down, press and hold the Home button\n"];
+			[text appendFormat:@"4) Keep both buttons held for 10 seconds\n"];
+			[text appendFormat:@"5) Release the Power button, still holding the Home button\n"];
+			[text appendFormat:@"6) Hold for 10 seconds\n"];
+			[text appendFormat:@"7) Release the home button\n"];
+			[rightButton setEnabled:NO];
+		}
+		else if(!device.imageable)
+		{
+			[text appendFormat:@"The attached device (%@) is not yet supported\n", device.name];
+			[rightButton setEnabled:NO];
+		}
+		else if([KFIOSDevice checkDFUModeDevice:device.usbDevice])
+		{	
+			[text appendFormat:@"DFU mode has been successfully entered\n"];
+			[text appendFormat:@"\n"];
+			[text appendFormat:@"After clicking next, the custom firmware will be generated and redsn0w will launch to continue the device bootup process\n"];
+			[text appendFormat:@"\n"];
+			[text appendFormat:@"Once redsn0w reports \"Done!\", quit redsn0w to continue\n"];
+			[text appendFormat:@"\n"];
+			[text appendFormat:@"Press NEXT to proceed\n"];
+			[rightButton setEnabled:YES];
+		}
+	}
+	[textView setString:text];
+}
+
+- (void)uiReset
 {
 	// go back to the beginning?
 	[progressIndicator setDoubleValue:0.0];
 	[progressIndicator setHidden:YES];
 	[statusField setStringValue:@""];
 	[cancelButton setEnabled:NO];
+	
+	ignoreUSBStateChange = NO;
 	
 	// kill the python scripts (if they're running)
 	[usbMuxTask kill];
@@ -464,10 +182,47 @@ void setProgressTaskName(const char * taskName)
 	tcpRelayTask = nil;
 	usbMuxTask = nil;
 	
-	ignoreUSBStateChanges = NO;
 }
 
-#pragma mark Task Queue Management
+# pragma mark - USB Stuff -
+
+-(void)usbDeviceAdded:(DTUSBDevice *)theDevice
+{
+	// only act if we don't have a device connected at the moment
+	if(!device.usbDevice)
+	{	
+		// if we've seen this device before
+		if(device.usbLocation == theDevice.location)
+		{
+			device.usbDevice = theDevice;
+			NSLog(@"Device reconnected: %@", device);
+		}
+		// if it is new, and in DFU mode
+		else if([KFIOSDevice checkDFUModeDevice:theDevice])
+		{
+			device.usbDevice = theDevice;
+			device.usbLocation = theDevice.location;
+			[device identifyIOSDevice];
+		}
+	}
+	[self uiUpdateOnUSBStateChange];
+}
+
+-(void)usbDeviceRemoved:(DTUSBDevice *)theDevice
+{
+	// if we have a device, see if it is now gone
+	if(device.usbDevice)
+	{
+		if(device.usbLocation == theDevice.location)
+		{
+			NSLog(@"Device disconnected: %@", device);
+			device.usbDevice = nil;
+		}
+	}
+	[self uiUpdateOnUSBStateChange];
+}
+
+#pragma mark - Task Queue Management -
 
 // This queueing mechanism is starting to be a little convoluted...
 
@@ -475,8 +230,6 @@ void setProgressTaskName(const char * taskName)
 {
 	self.taskQueue = [NSMutableArray array];
 	
-	ignoreUSBStateChanges = YES;
-
 	// create the directories
 	if(![[NSFileManager defaultManager] createDirectoryAtPath:[baseDir path] withIntermediateDirectories:YES attributes:nil error:nil])
 	{
@@ -640,7 +393,7 @@ void setProgressTaskName(const char * taskName)
 	if(theTask.errorDescription || theTask.cancelled)
 	{
 		[taskQueue removeAllObjects];
-		[self resetUI];
+		[self uiReset];
 		
 		if(!theTask.cancelled)
 		{
@@ -683,7 +436,7 @@ void setProgressTaskName(const char * taskName)
 {
 }
 
-#pragma mark Growl Support
+#pragma mark - Growl Support -
 
 // TODO: Needs updating to support new Growl API
 
