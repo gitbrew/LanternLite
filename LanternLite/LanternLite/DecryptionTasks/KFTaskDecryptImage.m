@@ -50,7 +50,7 @@
 	}
 	else
 	{
-		[self notifyErrorAndAbort:@"Unable to open data partition image"];
+		[self notifyErrorAndAbort:@"Unable to read data partition image"];
 	}
 	
 	// Create log files and open for writing
@@ -69,8 +69,6 @@
 	{
 		NSLog(@"couldn't open output file");
 	}
-	[decryptErrLogWriteHandle retain];
-	[decryptLogWriteHandle retain];
 	
 	// TODO: perform a test decryption first to see if it will work
 	
@@ -100,8 +98,6 @@
 	[decryptLogWriteHandle synchronizeFile];
 	[decryptErrLogWriteHandle closeFile];
 	[decryptLogWriteHandle closeFile];	
-	[decryptErrLogWriteHandle release];
-	[decryptLogWriteHandle release];
 }
 
 -(void)dealloc
