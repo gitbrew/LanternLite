@@ -99,18 +99,18 @@ static dispatch_queue_t s_mutexQueue;
 	return self;
 }
 
-// initialize with a simple string
-// must not contain any spaces - for example, passing file names this way is unsafe
--(id)initWithString:(NSString *)callString
+// initialize with array
+// create the args array using [myArgString componentsSeparatedByString:@" "] if it contains no extra spaces
+// object at args[0] is executable path (must be full path), any subsequent objects are arguments passed to it
+-(id)initWithArgs:(NSArray *)args
 {
 	if(self = [super init])
 	{
-		NSArray * comps = [callString componentsSeparatedByString:@" "];
-		NSMutableArray * mutableComps = [NSMutableArray arrayWithArray:comps];
+		NSMutableArray * mutableArgs = [NSMutableArray arrayWithArray:args];
 		
-		self.executablePath = [mutableComps objectAtIndex:0];
-		[mutableComps removeObjectAtIndex:0];
-		self.arguments = mutableComps;
+		self.executablePath = [mutableArgs objectAtIndex:0];
+		[mutableArgs removeObjectAtIndex:0];
+		self.arguments = mutableArgs;
 	}
 	return self;
 }

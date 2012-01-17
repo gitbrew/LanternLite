@@ -44,7 +44,7 @@ typedef void (^KFExecIOBlock)(NSData * data);
 @property (nonatomic, copy) KFExecIOBlock stdErrBlock;
 
 -(id)initWithBundledPythonScript:(NSString *)pythonScript arguments:(NSArray *)args;
--(id)initWithString:(NSString *)callString;
+-(id)initWithArgs:(NSArray *)args;
 
 -(BOOL)launch;
 -(BOOL)launchWithCompletionBlock:(KFExecCompletionBlock)aCompletionBlock;

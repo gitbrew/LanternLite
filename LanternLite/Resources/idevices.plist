@@ -4,215 +4,199 @@
 <array>
 	<dict>
 		<key>model</key>
-		<string>iPod3,1</string>
+		<string>iPhone1,1</string>
+		<key>modelID</key>
+		<string>m68ap</string>
 		<key>name</key>
-		<string>iPod touch 3G</string>
-		<key>usbProduct</key>
-		<string>0x1299</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
-	</dict>
-	<dict>
-		<key>model</key>
-		<string>iPad2,1</string>
-		<key>name</key>
-		<string>iPad 2</string>
-		<key>usbProduct</key>
-		<string>0x129f</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
-	</dict>
-	<dict>
-		<key>model</key>
-		<string>iPhone4,2</string>
-		<key>name</key>
-		<string>iPhone 4S</string>
-		<key>usbProduct</key>
-		<string>0x12a1</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
-	</dict>
-	<dict>
+		<string>iPhone</string>
+		<key>cpid</key>
+		<string>8900</string>
+		<key>bdid</key>
+		<string>00</string>
 		<key>imageable</key>
-		<true/>
-		<key>model</key>
-		<string>iPhone3,2</string>
-		<key>name</key>
-		<string>iPhone 4</string>
-		<key>usbProduct</key>
-		<string>0x129b</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<false/>
 	</dict>
 	<dict>
 		<key>model</key>
 		<string>iPhone1,2</string>
+		<key>modelID</key>
+		<string>n82ap</string>
 		<key>name</key>
 		<string>iPhone 3G</string>
-		<key>usbProduct</key>
-		<string>0x1292</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<key>cpid</key>
+		<string>8900</string>
+		<key>bdid</key>
+		<string>04</string>
+		<key>imageable</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>model</key>
-		<string>iPad2,2</string>
+		<string>iPhone2,1</string>
+		<key>modelID</key>
+		<string>n88ap</string>
 		<key>name</key>
-		<string>iPad 2</string>
-		<key>usbProduct</key>
-		<string>0x12a2</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
-	</dict>
-	<dict>
-		<key>model</key>
-		<string>iPod2,1</string>
-		<key>name</key>
-		<string>iPod touch 2G</string>
-		<key>usbProduct</key>
-		<string>0x1293</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
-	</dict>
-	<dict>
+		<string>iPhone 3GS</string>
+		<key>cpid</key>
+		<string>8920</string>
+		<key>bdid</key>
+		<string>00</string>
 		<key>imageable</key>
 		<true/>
-		<key>model</key>
-		<string>iPad1,1</string>
-		<key>name</key>
-		<string>iPad</string>
-		<key>usbProduct</key>
-		<string>0x129a</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
 	</dict>
 	<dict>
 		<key>model</key>
-		<string>iPad2,3</string>
+		<string>iPhone3,1</string>
+		<key>modelID</key>
+		<string>n90ap</string>
 		<key>name</key>
-		<string>iPad 2</string>
-		<key>usbProduct</key>
-		<string>0x12a3</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<string>iPhone 4 (GSM)</string>
+		<key>cpid</key>
+		<string>8930</string>
+		<key>bdid</key>
+		<string>00</string>
+		<key>imageable</key>
+		<true/>
 	</dict>
 	<dict>
 		<key>model</key>
-		<string>iPod2,2</string>
+		<string>iPhone3,3</string>
+		<key>modelID</key>
+		<string>n92ap</string>
 		<key>name</key>
-		<string>iPod touch 2.5G</string>
-		<key>usbProduct</key>
-		<string>0x1296</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
-	</dict>
-	<dict>
-		<key>model</key>
-		<string>iPod1,1</string>
-		<key>name</key>
-		<string>iPod touch</string>
-		<key>usbProduct</key>
-		<string>0x1291</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<string>iPhone 4 (CDMA)</string>
+		<key>cpid</key>
+		<string>8930</string>
+		<key>bdid</key>
+		<string>06</string>
+		<key>imageable</key>
+		<true/>
 	</dict>
 	<dict>
 		<key>model</key>
 		<string>iPhone4,1</string>
+		<key>modelID</key>
+		<string>n94ap</string>
 		<key>name</key>
 		<string>iPhone 4S</string>
-		<key>usbProduct</key>
-		<string>0x12a0</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<key>cpid</key>
+		<string>8940</string>
+		<key>bdid</key>
+		<string>08</string>
+		<key>imageable</key>
+		<false/>
 	</dict>
 	<dict>
-		<key>imageable</key>
-		<true/>
 		<key>model</key>
-		<string>iPhone3,1</string>
+		<string>iPod1,1</string>
+		<key>modelID</key>
+		<string>n45ap</string>
 		<key>name</key>
-		<string>iPhone 4</string>
-		<key>usbProduct</key>
-		<string>0x1297</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<string>iPod touch</string>
+		<key>cpid</key>
+		<string>8900</string>
+		<key>bdid</key>
+		<string>02</string>
+		<key>imageable</key>
+		<false/>
 	</dict>
 	<dict>
-		<key>imageable</key>
-		<true/>
 		<key>model</key>
-		<string>iPhone3,3</string>
+		<string>iPod2,1</string>
+		<key>modelID</key>
+		<string>n72ap</string>
 		<key>name</key>
-		<string>iPhone 4</string>
-		<key>usbProduct</key>
-		<string>0x129c</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<string>iPod touch 2G</string>
+		<key>cpid</key>
+		<string>8720</string>
+		<key>bdid</key>
+		<string>00</string>
+		<key>imageable</key>
+		<false/>
 	</dict>
 	<dict>
-		<key>imageable</key>
-		<true/>
 		<key>model</key>
-		<string>iPhone2,1</string>
+		<string>iPod3,1</string>
+		<key>modelID</key>
+		<string>n18ap</string>
 		<key>name</key>
-		<string>iPhone 3GS</string>
-		<key>usbProduct</key>
-		<string>0x1294</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<string>iPod touch 3G</string>
+		<key>cpid</key>
+		<string>8922</string>
+		<key>bdid</key>
+		<string>02</string>
+		<key>imageable</key>
+		<false/>
 	</dict>
 	<dict>
-		<key>imageable</key>
-		<true/>
 		<key>model</key>
 		<string>iPod4,1</string>
+		<key>modelID</key>
+		<string>n81ap</string>
 		<key>name</key>
 		<string>iPod touch 4G</string>
-		<key>usbProduct</key>
-		<string>0x129e</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<key>cpid</key>
+		<string>8930</string>
+		<key>bdid</key>
+		<string>08</string>
+		<key>imageable</key>
+		<true/>
 	</dict>
 	<dict>
 		<key>model</key>
-		<string>iPhone1,1</string>
+		<string>iPad1,1</string>
+		<key>modelID</key>
+		<string>k48ap</string>
 		<key>name</key>
-		<string>iPhone</string>
-		<key>usbProduct</key>
-		<string>0x1290</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<string>iPad</string>
+		<key>cpid</key>
+		<string>8930</string>
+		<key>bdid</key>
+		<string>02</string>
+		<key>imageable</key>
+		<true/>
 	</dict>
 	<dict>
 		<key>model</key>
-		<string>dfu1</string>
+		<string>iPad2,1</string>
+		<key>modelID</key>
+		<string>k93ap</string>
 		<key>name</key>
-		<string>DFU Mode - early iPhone/iPod</string>
-		<key>usbProduct</key>
-		<string>0x1222</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<string>iPad 2 (WiFi)</string>
+		<key>cpid</key>
+		<string>8940</string>
+		<key>bdid</key>
+		<string>04</string>
+		<key>imageable</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>model</key>
-		<string>dfu2</string>
+		<string>iPad2,2</string>
+		<key>modelID</key>
+		<string>k94ap</string>
 		<key>name</key>
-		<string>DFU Mode</string>
-		<key>usbProduct</key>
-		<string>0x1227</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<string>iPad 2 (GSM)</string>
+		<key>cpid</key>
+		<string>8940</string>
+		<key>bdid</key>
+		<string>06</string>
+		<key>imageable</key>
+		<false/>
 	</dict>
 	<dict>
 		<key>model</key>
-		<string>recovery</string>
+		<string>iPad2,3</string>
+		<key>modelID</key>
+		<string>k95ap</string>
 		<key>name</key>
-		<string>Recovery Mode</string>
-		<key>usbProduct</key>
-		<string>0x1281</string>
-		<key>usbVendor</key>
-		<string>0x05ac</string>
+		<string>iPad 2 (CDMA)</string>
+		<key>cpid</key>
+		<string>8940</string>
+		<key>bdid</key>
+		<string>02</string>
+		<key>imageable</key>
+		<false/>
 	</dict>
 </array>
 </plist>

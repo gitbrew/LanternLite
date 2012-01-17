@@ -12,6 +12,7 @@
 		61141F001468C02B0064B1E4 /* RamdiskFiles in Resources */ = {isa = PBXBuildFile; fileRef = 61141EFE1468C02B0064B1E4 /* RamdiskFiles */; };
 		61545A28149BDA75004834B0 /* ssh.tar.gz in Resources */ = {isa = PBXBuildFile; fileRef = 61545A26149BDA75004834B0 /* ssh.tar.gz */; };
 		61545A29149BDA75004834B0 /* xpwntool in Resources */ = {isa = PBXBuildFile; fileRef = 61545A27149BDA75004834B0 /* xpwntool */; };
+		615CD79214C5247400C8267E /* build_ramdisk.sh in Resources */ = {isa = PBXBuildFile; fileRef = 615CD79114C5247400C8267E /* build_ramdisk.sh */; };
 		616B86401469EA08003E98BA /* KFTaskDecryptImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 616B863D1469EA08003E98BA /* KFTaskDecryptImage.m */; };
 		61772C2A14A0190A007F0E93 /* limera1n.c in Sources */ = {isa = PBXBuildFile; fileRef = 61772C1114A0190A007F0E93 /* limera1n.c */; };
 		61772C2B14A0190A007F0E93 /* steaks4uce.c in Sources */ = {isa = PBXBuildFile; fileRef = 61772C1314A0190A007F0E93 /* steaks4uce.c */; };
@@ -35,7 +36,6 @@
 		6191CB031468A02600E87917 /* KFIOSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CACE1468A02600E87917 /* KFIOSDevice.m */; };
 		6191CB041468A02600E87917 /* KFTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CAD01468A02600E87917 /* KFTask.m */; };
 		6191CB051468A02600E87917 /* LanternLiteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CAD21468A02600E87917 /* LanternLiteAppDelegate.m */; };
-		61B6C08614C4C162000EAAD9 /* LanternLite5.0.sh in Resources */ = {isa = PBXBuildFile; fileRef = 61B6C08514C4C162000EAAD9 /* LanternLite5.0.sh */; };
 		61EDFCCE14662A9000188E91 /* Askpass in Resources */ = {isa = PBXBuildFile; fileRef = 61EDFCCD14662A9000188E91 /* Askpass */; };
 		61EF99F5148757D800BD0B0E /* libpng12.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 61EF99F4148757D800BD0B0E /* libpng12.0.dylib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -79,6 +79,7 @@
 		61141EFE1468C02B0064B1E4 /* RamdiskFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RamdiskFiles; path = Resources/RamdiskFiles; sourceTree = "<group>"; };
 		61545A26149BDA75004834B0 /* ssh.tar.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = ssh.tar.gz; path = Resources/ssh.tar.gz; sourceTree = "<group>"; };
 		61545A27149BDA75004834B0 /* xpwntool */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = xpwntool; path = Resources/xpwntool; sourceTree = "<group>"; };
+		615CD79114C5247400C8267E /* build_ramdisk.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = build_ramdisk.sh; path = Resources/build_ramdisk.sh; sourceTree = "<group>"; };
 		616B863C1469EA08003E98BA /* KFTaskDecryptImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFTaskDecryptImage.h; sourceTree = "<group>"; };
 		616B863D1469EA08003E98BA /* KFTaskDecryptImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFTaskDecryptImage.m; sourceTree = "<group>"; };
 		61772C1014A0190A007F0E93 /* exploits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exploits.h; sourceTree = "<group>"; };
@@ -124,7 +125,6 @@
 		6191CAD01468A02600E87917 /* KFTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFTask.m; sourceTree = "<group>"; };
 		6191CAD11468A02600E87917 /* LanternLiteAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanternLiteAppDelegate.h; sourceTree = "<group>"; };
 		6191CAD21468A02600E87917 /* LanternLiteAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanternLiteAppDelegate.m; sourceTree = "<group>"; };
-		61B6C08514C4C162000EAAD9 /* LanternLite5.0.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = LanternLite5.0.sh; path = Resources/LanternLite5.0.sh; sourceTree = "<group>"; };
 		61EDFCCD14662A9000188E91 /* Askpass */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = Askpass; path = Resources/Askpass; sourceTree = "<group>"; };
 		61EF99F4148757D800BD0B0E /* libpng12.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng12.0.dylib; path = /usr/X11/lib/libpng12.0.dylib; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* LanternLite-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LanternLite-Info.plist"; sourceTree = "<group>"; };
@@ -236,9 +236,9 @@
 				61141EFD1468C02B0064B1E4 /* PythonScripts */,
 				61141EFE1468C02B0064B1E4 /* RamdiskFiles */,
 				61EDFCCD14662A9000188E91 /* Askpass */,
-				61B6C08514C4C162000EAAD9 /* LanternLite5.0.sh */,
 				61545A26149BDA75004834B0 /* ssh.tar.gz */,
 				61545A27149BDA75004834B0 /* xpwntool */,
+				615CD79114C5247400C8267E /* build_ramdisk.sh */,
 				E4222C361448BAE900AA42E2 /* chime.aif */,
 				E4F00B211445D801009168D8 /* LanternLite.icns */,
 				E4C8838F1434EE6E002455EC /* idevices.plist */,
@@ -431,7 +431,7 @@
 				61141F001468C02B0064B1E4 /* RamdiskFiles in Resources */,
 				61545A28149BDA75004834B0 /* ssh.tar.gz in Resources */,
 				61545A29149BDA75004834B0 /* xpwntool in Resources */,
-				61B6C08614C4C162000EAAD9 /* LanternLite5.0.sh in Resources */,
+				615CD79214C5247400C8267E /* build_ramdisk.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -101,13 +101,13 @@ def main(ipswname, model_id, outdir):
   ramdiskname = manifest["BuildIdentities"][0]["Manifest"]["RestoreRamDisk"]["Info"]["Path"]
   key,iv = keys.getKeyIV("Ramdisk")
   
-  build_options = "OK %s %s %s %s" % (ipswname, ramdiskname, key, iv)
+  build_options = "OK %s %s %s" % (ramdiskname, key, iv)
     
   print "%s" % build_options
 
 
 if __name__ == "__main__":
   if len(sys.argv) < 4:
-    print "Usage: %s IPSW outdir" % __file__
+    print "Usage: %s IPSW modelID outdir" % __file__
     sys.exit(-1)
   main(sys.argv[1], sys.argv[2], sys.argv[3])

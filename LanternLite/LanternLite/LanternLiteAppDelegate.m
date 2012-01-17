@@ -161,6 +161,11 @@
 			[rightButton setEnabled:YES];
 		}
 	}
+	else
+	{
+		[text appendFormat:@"Working\n"];
+		[rightButton setEnabled:NO];
+	}
 	[textView setString:text];
 }
 
@@ -228,6 +233,8 @@
 
 -(void)queueTasks:(KFIOSDevice *)theDevice targetDir:(NSURL *)baseDir
 {
+	[rightButton setEnabled:NO];
+
 	self.taskQueue = [NSMutableArray array];
 	
 	// create the directories
@@ -269,9 +276,9 @@
 		[taskQueue addObject:boot];
 		
 		// Launch the tcprelay python script
-		//NSArray * tcpRelayArgs = [@"-t 22:47499 1999:1999" componentsSeparatedByString:@" "];
-		//tcpRelayTask = [[KFExec alloc] initWithBundledPythonScript:@"tcprelay" arguments:tcpRelayArgs];
-		//[tcpRelayTask launch];
+		NSArray * tcpRelayArgs = [@"-t 22:47499 1999:1999" componentsSeparatedByString:@" "];
+		tcpRelayTask = [[KFExec alloc] initWithBundledPythonScript:@"tcprelay" arguments:tcpRelayArgs];
+		[tcpRelayTask launch];
 	}
 	// Get the keys.plist file
 	if(optionRetrieveKeys)
