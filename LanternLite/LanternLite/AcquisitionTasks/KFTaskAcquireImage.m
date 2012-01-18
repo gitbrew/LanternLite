@@ -224,7 +224,7 @@
 	[sshTask release];
 	
 	// calculate sha-1 checksum of the image (using openssl) and log it
-	[self notifyBeginSubtask:@"Calculating SHA1" indefinite:YES];
+	[self notifyBeginSubtask:@"Calculating SHA1 (this could take a few minutes)" indefinite:YES];
 	
 	NSMutableArray * sha1HashArgs = [NSMutableArray array];
 	[sha1HashArgs addObject:@"openssl"];

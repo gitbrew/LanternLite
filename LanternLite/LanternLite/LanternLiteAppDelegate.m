@@ -364,7 +364,7 @@
 		if(s_chime) [s_chime play];
 		
 		[statusField setStringValue:@"Finished!"];
-		[self performSelector:@selector(resetUI) withObject:nil afterDelay:1.0];
+		[self performSelector:@selector(uiReset) withObject:nil afterDelay:1.0];
 		
 		if(NSClassFromString(@"GrowlApplicationBridge"))
 		{

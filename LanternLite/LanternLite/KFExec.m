@@ -241,6 +241,18 @@ static dispatch_queue_t s_mutexQueue;
 	}
 }
 
+-(void)waitForTime:(NSUInteger)seconds
+{
+	NSUInteger counter = 0;
+	while(self.running && (counter < seconds))
+	{
+		NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+		[[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
+		[pool drain];
+		counter++;
+	}
+}
+
 -(void)kill
 {
 	if(self.running)

@@ -26,10 +26,10 @@
 		61772C3314A0190A007F0E93 /* libmd_error.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61772C2414A0190A007F0E93 /* libmd_error.cpp */; };
 		61772C3414A0190A007F0E93 /* libmd_platform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61772C2614A0190A007F0E93 /* libmd_platform.cpp */; };
 		61772C3514A0190A007F0E93 /* libMobiledevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61772C2814A0190A007F0E93 /* libMobiledevice.cpp */; };
+		617DCC8C14C6891200E448D9 /* KFTaskBootDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 617DCC8B14C6891200E448D9 /* KFTaskBootDevice.m */; };
 		6191CA6914689FF100E87917 /* MobileDevice in Frameworks */ = {isa = PBXBuildFile; fileRef = 6191CA6814689FF100E87917 /* MobileDevice */; };
 		6191CADB1468A02600E87917 /* KFTaskAcquireImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CA7F1468A02600E87917 /* KFTaskAcquireImage.m */; };
 		6191CADD1468A02600E87917 /* KFTaskAcquireKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CA831468A02600E87917 /* KFTaskAcquireKeys.m */; };
-		6191CAE41468A02600E87917 /* KFTaskBootDevice.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6191CA951468A02600E87917 /* KFTaskBootDevice.mm */; };
 		6191CB001468A02600E87917 /* DTUSBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CAC81468A02600E87917 /* DTUSBDevice.m */; };
 		6191CB011468A02600E87917 /* DTUSBMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CACA1468A02600E87917 /* DTUSBMonitor.m */; };
 		6191CB021468A02600E87917 /* KFExec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191CACC1468A02600E87917 /* KFExec.m */; };
@@ -106,13 +106,13 @@
 		61772C2714A0190A007F0E93 /* libmd_platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libmd_platform.h; sourceTree = "<group>"; };
 		61772C2814A0190A007F0E93 /* libMobiledevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libMobiledevice.cpp; sourceTree = "<group>"; };
 		61772C2914A0190A007F0E93 /* libMobiledevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libMobiledevice.h; sourceTree = "<group>"; };
+		617DCC8B14C6891200E448D9 /* KFTaskBootDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFTaskBootDevice.m; sourceTree = "<group>"; };
 		6191CA6814689FF100E87917 /* MobileDevice */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = MobileDevice; path = /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice; sourceTree = "<absolute>"; };
 		6191CA7E1468A02600E87917 /* KFTaskAcquireImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFTaskAcquireImage.h; sourceTree = "<group>"; };
 		6191CA7F1468A02600E87917 /* KFTaskAcquireImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFTaskAcquireImage.m; sourceTree = "<group>"; };
 		6191CA821468A02600E87917 /* KFTaskAcquireKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFTaskAcquireKeys.h; sourceTree = "<group>"; };
 		6191CA831468A02600E87917 /* KFTaskAcquireKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFTaskAcquireKeys.m; sourceTree = "<group>"; };
 		6191CA941468A02600E87917 /* KFTaskBootDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFTaskBootDevice.h; sourceTree = "<group>"; };
-		6191CA951468A02600E87917 /* KFTaskBootDevice.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KFTaskBootDevice.mm; sourceTree = "<group>"; };
 		6191CAC71468A02600E87917 /* DTUSBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTUSBDevice.h; sourceTree = "<group>"; };
 		6191CAC81468A02600E87917 /* DTUSBDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTUSBDevice.m; sourceTree = "<group>"; };
 		6191CAC91468A02600E87917 /* DTUSBMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTUSBMonitor.h; sourceTree = "<group>"; };
@@ -349,7 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				6191CA941468A02600E87917 /* KFTaskBootDevice.h */,
-				6191CA951468A02600E87917 /* KFTaskBootDevice.mm */,
+				617DCC8B14C6891200E448D9 /* KFTaskBootDevice.m */,
 			);
 			path = BootDeviceTasks;
 			sourceTree = "<group>";
@@ -445,7 +445,6 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				6191CADB1468A02600E87917 /* KFTaskAcquireImage.m in Sources */,
 				6191CADD1468A02600E87917 /* KFTaskAcquireKeys.m in Sources */,
-				6191CAE41468A02600E87917 /* KFTaskBootDevice.mm in Sources */,
 				6191CB001468A02600E87917 /* DTUSBDevice.m in Sources */,
 				6191CB011468A02600E87917 /* DTUSBMonitor.m in Sources */,
 				6191CB021468A02600E87917 /* KFExec.m in Sources */,
@@ -465,6 +464,7 @@
 				61772C3314A0190A007F0E93 /* libmd_error.cpp in Sources */,
 				61772C3414A0190A007F0E93 /* libmd_platform.cpp in Sources */,
 				61772C3514A0190A007F0E93 /* libMobiledevice.cpp in Sources */,
+				617DCC8C14C6891200E448D9 /* KFTaskBootDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

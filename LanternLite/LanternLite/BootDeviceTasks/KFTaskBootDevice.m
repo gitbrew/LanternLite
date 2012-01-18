@@ -1,5 +1,5 @@
 //
-//  KFTaskBootDevice.mm
+//  KFTaskBootDevice.m
 //  LanternLite
 //
 //  Created by Author on 10/14/11.
@@ -147,12 +147,13 @@
 	redsn0wExec = [[KFExec alloc] initWithArgs:redsn0wArgs];
 	[redsn0wExec launch];
 	
-	// completes when redsn0w exits (right now redsn0w must be exitsed manually once finished)
-	[self notifyBeginSubtask:@"Waiting for redsn0w to complete" indefinite:YES];
-	[redsn0wExec waitForCompletion];
-	
-  
 	// hack: should send notification from ramdisk once ready so there is no guesswork
+	// completes when redsn0w exits (killed automatically after 1m)
+	[self notifyBeginSubtask:@"Waiting 1 mintue for redsn0w to complete" indefinite:YES];
+	[redsn0wExec waitForTime:60];
+  [redsn0wExec kill];
+	
+	// wait a little more
 	[self notifyBeginSubtask:@"Waiting 45s for device to boot" indefinite:YES];
 	sleep(45);
 	

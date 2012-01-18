@@ -50,6 +50,7 @@ typedef void (^KFExecIOBlock)(NSData * data);
 -(BOOL)launchWithCompletionBlock:(KFExecCompletionBlock)aCompletionBlock;
 
 -(void)waitForCompletion;
+-(void)waitForTime:(NSUInteger)seconds;
 -(void)kill;
 
 @end
