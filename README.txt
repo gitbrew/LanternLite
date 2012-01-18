@@ -9,7 +9,7 @@ The following functionality has been implemented:
 
 Requirements:
 
-* LanternLite5.0.pkg (found in downloads section) - also installs python deps
+* LanternLite.pkg (found in downloads section) - also installs python deps
 * redsn0w 0.9.9b8 (link: https://sites.google.com/a/iphone-dev.com/files/home/redsn0w_mac_0.9.9b8.zip)
 * iOS 5.0 IPSW for your device (individual links below for supported devices)
 
@@ -30,12 +30,4 @@ Instructions:
 
 3) Run LanternLite5.0.pkg and install. Continue with the rest of this process once you've logged out and back in.
 
-4) Open Terminal. In the terminal window, type the following two lines, pressing enter after each line:
-
-    cd /Applications
-
-    sh ./LanternLite5.0.sh
-
-* NOTE: The commands above assume that Lantern Lite was installed in the default installation directory. If the installation directory was changed, please modify the commands accordingly.
-
-5) Follow further instructions as they appear in the terminal window.
+4) Run app.
