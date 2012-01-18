@@ -45,6 +45,8 @@
 
 	KFExec * usbMuxTask;
 	KFExec * tcpRelayTask;
+	
+	NSFileHandle * acquisitionLog;
 }
 
 @property (assign) IBOutlet NSWindow * acquisitionWindow;
@@ -56,6 +58,7 @@
 @property (assign) BOOL ignoreUSBStateChange;
 @property (retain) KFIOSDevice * device;
 @property (nonatomic, retain) NSMutableArray * taskQueue;
+@property (nonatomic, retain) NSFileHandle * acquisitionLog;
 
 -(IBAction)testButton:(id)sender;
 -(IBAction)cancelButton:(id)sender;

@@ -12,6 +12,7 @@
 @implementation KFTaskAcquireImage
 
 @synthesize imageFile;
+@synthesize acquisitionLog;
 
 -(id)init
 {
@@ -221,6 +222,31 @@
 	                                              object:readHandle];
 	
 	[sshTask release];
+	
+	// calculate sha-1 checksum of the image (using openssl) and log it
+	[self notifyBeginSubtask:@"Calculating SHA1" indefinite:YES];
+	
+	NSMutableArray * sha1HashArgs = [NSMutableArray array];
+	[sha1HashArgs addObject:@"openssl"];
+	[sha1HashArgs addObject:@"sha1"];
+	[sha1HashArgs addObject:[imageFile path]];
+	
+	sha1HashExec = [[KFExec alloc] initWithArgs:sha1HashArgs];
+	stdOutData = [NSMutableData data];
+	sha1HashExec.stdOutBlock = ^(NSData * data) {
+		[stdOutData appendData:data];
+	};
+	[sha1HashExec launchWithCompletionBlock:^(void) {
+		 sha1HashExecStatus = sha1HashExec.terminationStatus;
+	}];
+	[sha1HashExec waitForCompletion];
+	
+	// better way to append newline to NSData object directly?
+	NSString * stdOutStr = [[[NSString alloc] initWithData:stdOutData encoding:NSUTF8StringEncoding] autorelease];
+	NSLog(@"%@", stdOutStr);
+	NSString * logString = [NSString stringWithFormat:@"%@\n", stdOutStr];
+	[acquisitionLog writeData:[logString dataUsingEncoding:NSUTF8StringEncoding]];
+	
 }
 
 @end

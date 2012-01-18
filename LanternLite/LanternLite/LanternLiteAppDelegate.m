@@ -19,6 +19,7 @@
 @synthesize acquisitionWindow;
 @synthesize device;
 @synthesize taskQueue;
+@synthesize acquisitionLog;
 @synthesize optionBootDevice;
 @synthesize optionRetrieveKeys;
 @synthesize optionImageDataPartition;
@@ -267,6 +268,27 @@
 	NSURL * rawDataImage = [rawFilesDirectory URLByAppendingPathComponent:@"data_partition.dmg"];
 	NSURL * decryptedDataImage = [decryptedFilesDirectory URLByAppendingPathComponent:@"data_partition.dmg"];
 
+	// Log start
+	NSDate * now = [NSDate date];
+	NSDateFormatter * df = [[[NSDateFormatter alloc] init] autorelease];
+	[df setDateStyle:NSDateFormatterMediumStyle];
+	[df setTimeStyle:NSDateFormatterFullStyle];
+	NSString * dateString = [df stringFromDate:now];
+	NSString * outString = [NSString stringWithFormat:@"Acquisition Started: %@\n", dateString];
+	NSData * outData = [outString dataUsingEncoding:NSUTF8StringEncoding];
+	
+	[[NSFileManager defaultManager] createFileAtPath:[[baseDir URLByAppendingPathComponent:@"AcquisitionLog.txt"] path] contents:nil attributes:nil];
+	
+	NSError * error = nil;
+	acquisitionLog = [NSFileHandle fileHandleForWritingToURL:[baseDir URLByAppendingPathComponent:@"AcquisitionLog.txt"] error:&error];
+	if(error)
+	{
+		NSLog(@"couldn't open Acquisition Log");
+	}
+	
+	[acquisitionLog writeData:outData];
+	[acquisitionLog synchronizeFile];
+
 	// Boot the device
 	if(optionBootDevice)
 	{
@@ -294,6 +316,7 @@
 		KFTaskAcquireImage * image = [[[KFTaskAcquireImage alloc] init] autorelease];
 		image.delegate = self;
 		image.imageFile = rawDataImage;
+		image.acquisitionLog = self.acquisitionLog;
 		[taskQueue addObject:image];
 	}
 	// Decrypt the data partition image
@@ -322,6 +345,19 @@
 	}
 	else
 	{
+		// Log completion
+		NSDate * now = [NSDate date];
+		NSDateFormatter * df = [[[NSDateFormatter alloc] init] autorelease];
+		[df setDateStyle:NSDateFormatterMediumStyle];
+		[df setTimeStyle:NSDateFormatterFullStyle];
+		NSString * dateString = [df stringFromDate:now];
+		NSString * outString = [NSString stringWithFormat:@"Acquisition Complete: %@\n", dateString];
+		NSData * outData = [outString dataUsingEncoding:NSUTF8StringEncoding];
+		[acquisitionLog writeData:outData];
+		[acquisitionLog synchronizeFile];
+		[acquisitionLog closeFile];
+		acquisitionLog = nil;
+		
 		/* Play a chime sound */
 		static NSSound * s_chime = nil;
 		if(s_chime == nil) s_chime = [[NSSound soundNamed:@"chime"] retain];
