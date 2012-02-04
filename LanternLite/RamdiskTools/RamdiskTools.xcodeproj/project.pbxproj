@@ -1,0 +1,212 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		6152634514DD1A8700A3C4C6 /* AppleEffaceableStorage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AppleEffaceableStorage.c; sourceTree = "<group>"; };
+		6152634614DD1A8700A3C4C6 /* AppleEffaceableStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleEffaceableStorage.h; sourceTree = "<group>"; };
+		6152634714DD1A8700A3C4C6 /* AppleKeyStore_kdf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AppleKeyStore_kdf.c; sourceTree = "<group>"; };
+		6152634814DD1A8700A3C4C6 /* AppleKeyStore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AppleKeyStore.c; sourceTree = "<group>"; };
+		6152634914DD1A8700A3C4C6 /* AppleKeyStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleKeyStore.h; sourceTree = "<group>"; };
+		6152634A14DD1A8700A3C4C6 /* bsdcrypto */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bsdcrypto; sourceTree = "<group>"; };
+		6152634B14DD1A8700A3C4C6 /* device_info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = device_info.c; sourceTree = "<group>"; };
+		6152634C14DD1A8700A3C4C6 /* device_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = device_info.h; sourceTree = "<group>"; };
+		6152634D14DD1A8700A3C4C6 /* device_infos.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = device_infos.c; sourceTree = "<group>"; };
+		6152634E14DD1A8700A3C4C6 /* image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image.c; sourceTree = "<group>"; };
+		6152634F14DD1A8700A3C4C6 /* image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image.h; sourceTree = "<group>"; };
+		6152635014DD1A8700A3C4C6 /* IOAESAccelerator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IOAESAccelerator.c; sourceTree = "<group>"; };
+		6152635114DD1A8700A3C4C6 /* IOAESAccelerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOAESAccelerator.h; sourceTree = "<group>"; };
+		6152635214DD1A8700A3C4C6 /* IOKit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = IOKit.c; sourceTree = "<group>"; };
+		6152635314DD1A8700A3C4C6 /* IOKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOKit.h; sourceTree = "<group>"; };
+		6152635414DD1A8700A3C4C6 /* IOUSBDeviceControllerLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOUSBDeviceControllerLib.h; sourceTree = "<group>"; };
+		6152635514DD1A8700A3C4C6 /* keystore_device.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = keystore_device.xml; sourceTree = "<group>"; };
+		6152635614DD1A8700A3C4C6 /* ldid */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ldid; sourceTree = "<group>"; };
+		6152635714DD1A8700A3C4C6 /* plist_server.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plist_server.c; sourceTree = "<group>"; };
+		6152635814DD1A8700A3C4C6 /* plist_server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plist_server.h; sourceTree = "<group>"; };
+		6152635914DD1A8700A3C4C6 /* registry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = registry.c; sourceTree = "<group>"; };
+		6152635A14DD1A8700A3C4C6 /* registry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registry.h; sourceTree = "<group>"; };
+		6152635B14DD1A8700A3C4C6 /* remote_functions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = remote_functions.c; sourceTree = "<group>"; };
+		6152635C14DD1A8700A3C4C6 /* remote_functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remote_functions.h; sourceTree = "<group>"; };
+		6152635D14DD1A8700A3C4C6 /* restored_external.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = restored_external.c; sourceTree = "<group>"; };
+		6152635F14DD1A8700A3C4C6 /* systemkb_bruteforce.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = systemkb_bruteforce.c; sourceTree = "<group>"; };
+		6152636014DD1A8700A3C4C6 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		6152636114DD1A8700A3C4C6 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		6152636A14DD1FD000A3C4C6 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		6152626D14DD19A600A3C4C6 = {
+			isa = PBXGroup;
+			children = (
+				6152636A14DD1FD000A3C4C6 /* Makefile */,
+				6152634514DD1A8700A3C4C6 /* AppleEffaceableStorage.c */,
+				6152634614DD1A8700A3C4C6 /* AppleEffaceableStorage.h */,
+				6152634714DD1A8700A3C4C6 /* AppleKeyStore_kdf.c */,
+				6152634814DD1A8700A3C4C6 /* AppleKeyStore.c */,
+				6152634914DD1A8700A3C4C6 /* AppleKeyStore.h */,
+				6152634A14DD1A8700A3C4C6 /* bsdcrypto */,
+				6152634B14DD1A8700A3C4C6 /* device_info.c */,
+				6152634C14DD1A8700A3C4C6 /* device_info.h */,
+				6152634D14DD1A8700A3C4C6 /* device_infos.c */,
+				6152634E14DD1A8700A3C4C6 /* image.c */,
+				6152634F14DD1A8700A3C4C6 /* image.h */,
+				6152635014DD1A8700A3C4C6 /* IOAESAccelerator.c */,
+				6152635114DD1A8700A3C4C6 /* IOAESAccelerator.h */,
+				6152635214DD1A8700A3C4C6 /* IOKit.c */,
+				6152635314DD1A8700A3C4C6 /* IOKit.h */,
+				6152635414DD1A8700A3C4C6 /* IOUSBDeviceControllerLib.h */,
+				6152635514DD1A8700A3C4C6 /* keystore_device.xml */,
+				6152635614DD1A8700A3C4C6 /* ldid */,
+				6152635714DD1A8700A3C4C6 /* plist_server.c */,
+				6152635814DD1A8700A3C4C6 /* plist_server.h */,
+				6152635914DD1A8700A3C4C6 /* registry.c */,
+				6152635A14DD1A8700A3C4C6 /* registry.h */,
+				6152635B14DD1A8700A3C4C6 /* remote_functions.c */,
+				6152635C14DD1A8700A3C4C6 /* remote_functions.h */,
+				6152635D14DD1A8700A3C4C6 /* restored_external.c */,
+				6152635F14DD1A8700A3C4C6 /* systemkb_bruteforce.c */,
+				6152636014DD1A8700A3C4C6 /* util.c */,
+				6152636114DD1A8700A3C4C6 /* util.h */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		6152627414DD19A600A3C4C6 /* RamdiskTools */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 6152627714DD19A600A3C4C6 /* Build configuration list for PBXLegacyTarget "RamdiskTools" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = /Users/Vince/Projects/LanternLite/LanternLite/LanternLite/RamdiskTools;
+			dependencies = (
+			);
+			name = RamdiskTools;
+			passBuildSettingsInEnvironment = 1;
+			productName = RamdiskTools;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		6152626F14DD19A600A3C4C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Katana Forensics, Inc.";
+			};
+			buildConfigurationList = 6152627214DD19A600A3C4C6 /* Build configuration list for PBXProject "RamdiskTools" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6152626D14DD19A600A3C4C6;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6152627414DD19A600A3C4C6 /* RamdiskTools */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		6152627514DD19A600A3C4C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6152627614DD19A600A3C4C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		6152627814DD19A600A3C4C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6152627914DD19A600A3C4C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6152627214DD19A600A3C4C6 /* Build configuration list for PBXProject "RamdiskTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6152627514DD19A600A3C4C6 /* Debug */,
+				6152627614DD19A600A3C4C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6152627714DD19A600A3C4C6 /* Build configuration list for PBXLegacyTarget "RamdiskTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6152627814DD19A600A3C4C6 /* Debug */,
+				6152627914DD19A600A3C4C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6152626F14DD19A600A3C4C6 /* Project object */;
+}

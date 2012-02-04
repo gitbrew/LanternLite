@@ -2,8 +2,10 @@ Acknowledgements:
 
 Our sincere thanks goes out to all of those who have spent the long hours in research and development, and released their efforts publicly for all to enjoy. The following individuals and teams have contributed code or ideas that have been incorporated into our tool:
 
-Jean-Baptiste Bedrune and Jean Sigwald (iphone-dataprotection) - http://code.google.com/p/iphone-dataprotection/
-Dev-Team (redsn0w) - http://blog.iphone-dev.org/
-Chronic Dev (greenpois0n, libirecovery) - http://chronic-dev.org/blog/
-msftguy, novi (iphone_tunnel) - http://code.google.com/p/iphonetunnel-usbmuxconnectbyport/
-
+iphone-dataprotection (RamdiskTools, PythonScripts) - Jean-Baptiste Bedrune and Jean Sigwald (http://code.google.com/p/iphone-dataprotection/)
+redsn0w - iPhone Dev-Team (http://blog.iphone-dev.org/)
+libirecovery - Chronic-Dev (http://chronic-dev.org/blog/)
+iphone_tunnel, libmd - msftguy, novi (http://code.google.com/p/iphonetunnel-usbmuxconnectbyport/)
+xpwn - planetbeing, iH8sn0w, fswrangler
+libpng-1.2 - Glenn Randers-Pehrson and contributing authors
+libusb-1.0

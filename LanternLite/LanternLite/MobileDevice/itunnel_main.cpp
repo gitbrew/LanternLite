@@ -177,6 +177,9 @@ int itunnel_main (int argc, char *argv [])
 	case MODE_TUNNEL:
 		libmd_start_mux_tunnel(g_local_port, g_iphone_port);
 		break;
+	case MODE_NONE:
+		assert(0);
+		break;
 	}
 
 	return 0;

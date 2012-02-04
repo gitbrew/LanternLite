@@ -1,4 +1,4 @@
-UI based tool to perform various imaging tool for iOS devices.
+UI based tool to perform various imaging tool for iOS devices (iOS versions 4 & 5)
 
 The following functionality has been implemented:
 
@@ -9,7 +9,7 @@ The following functionality has been implemented:
 
 Requirements:
 
-* LanternLite.pkg (found in downloads section) - also installs python deps
+* LanternLite.pkg (found in "Downloads" section) - also installs python deps
 * redsn0w 0.9.9b8 (link: https://sites.google.com/a/iphone-dev.com/files/home/redsn0w_mac_0.9.9b8.zip)
 * iOS 5.0 IPSW for your device (individual links below for supported devices)
 
@@ -22,12 +22,16 @@ iOS 5.0 download links:
 - iPhone 4 (CDMA - Verizon): http://appldnld.apple.com/iPhone4/041-9743.20111012.vjhfp/iPhone3,3_5.0_9A334_Restore.ipsw
 - iPad 1: http://appldnld.apple.com/iPhone4/041-8357.20111012.DTOrM/iPad1,1_5.0_9A334_Restore.ipsw
 
-Instructions:
+Installation Instructions:
 
-1) Download redsn0w and unzip. Move redsn0w application bundle (not the whole .zip flie) to the desktop.
+1) Download redsn0w 0.9.9b8 and unzip. Move redsn0w application bundle (not the whole .zip flie) to the desktop.
 
 2) Download the IPSW for your device and place it on the desktop.
 
-3) Run LanternLite5.0.pkg and install. Continue with the rest of this process once you've logged out and back in.
+3) Run LanternLite.pkg and install. Continue with the rest of this process once you've logged out and back in.
 
 4) Run app.
+
+Build Instructions:
+
+Please refer to HOW_TO_BUILD.txt for details on building project from source

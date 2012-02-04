@@ -1,0 +1,211 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6152613114DCD0CC00A3C4C6 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6152613014DCD0CC00A3C4C6 /* main.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6152614414DCD11C00A3C4C6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6152612C14DCD0CC00A3C4C6 /* Askpass */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Askpass; sourceTree = BUILT_PRODUCTS_DIR; };
+		6152613014DCD0CC00A3C4C6 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6152612914DCD0CC00A3C4C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6152612114DCD0CB00A3C4C6 = {
+			isa = PBXGroup;
+			children = (
+				6152612F14DCD0CC00A3C4C6 /* Askpass */,
+				6152612D14DCD0CC00A3C4C6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6152612D14DCD0CC00A3C4C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6152612C14DCD0CC00A3C4C6 /* Askpass */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6152612F14DCD0CC00A3C4C6 /* Askpass */ = {
+			isa = PBXGroup;
+			children = (
+				6152613014DCD0CC00A3C4C6 /* main.c */,
+			);
+			path = Askpass;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6152612B14DCD0CC00A3C4C6 /* Askpass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6152613614DCD0CC00A3C4C6 /* Build configuration list for PBXNativeTarget "Askpass" */;
+			buildPhases = (
+				6152612814DCD0CC00A3C4C6 /* Sources */,
+				6152612914DCD0CC00A3C4C6 /* Frameworks */,
+				6152614414DCD11C00A3C4C6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Askpass;
+			productName = Askpass;
+			productReference = 6152612C14DCD0CC00A3C4C6 /* Askpass */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6152612314DCD0CB00A3C4C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Katana Forensics, Inc.";
+			};
+			buildConfigurationList = 6152612614DCD0CB00A3C4C6 /* Build configuration list for PBXProject "Askpass" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6152612114DCD0CB00A3C4C6;
+			productRefGroup = 6152612D14DCD0CC00A3C4C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6152612B14DCD0CC00A3C4C6 /* Askpass */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6152612814DCD0CC00A3C4C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6152613114DCD0CC00A3C4C6 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6152613414DCD0CC00A3C4C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6152613514DCD0CC00A3C4C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6152613714DCD0CC00A3C4C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6152613814DCD0CC00A3C4C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6152612614DCD0CB00A3C4C6 /* Build configuration list for PBXProject "Askpass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6152613414DCD0CC00A3C4C6 /* Debug */,
+				6152613514DCD0CC00A3C4C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6152613614DCD0CC00A3C4C6 /* Build configuration list for PBXNativeTarget "Askpass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6152613714DCD0CC00A3C4C6 /* Debug */,
+				6152613814DCD0CC00A3C4C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6152612314DCD0CB00A3C4C6 /* Project object */;
+}

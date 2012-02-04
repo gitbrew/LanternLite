@@ -1,0 +1,7 @@
+Requirements:
+
+- Mac OS X Lion
+- Xcode 4.2.1
+- Mac OS 10.7 SDK
+- IPhone OS 5.0 SDK
+- Git
