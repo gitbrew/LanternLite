@@ -89,6 +89,9 @@
 	// This just sets up arguments to the ssh command. The first argument is a string of the form username@hostname and the second is a string with the actual command to be run on the host.
 	NSMutableArray *args = [[NSMutableArray new] autorelease];
 	[args addObject:@"-p 47499"];
+	[args addObject:@"-o NoHostAuthenticationForLocalhost=yes"];
+	//[args addObject:@"-o StrictHostKeyChecking=no"];
+	//[args addObject:@"-o UserKnownHostsFile=/dev/null"];
 	[args addObject:[NSString stringWithFormat:@"%@@%@",@"root",@"localhost"]];
 	[args addObjectsFromArray:[command componentsSeparatedByString:@" "]];
 	
@@ -188,6 +191,10 @@
 	// This just sets up arguments to the ssh command. The first argument is a string of the form username@hostname and the second is a string with the actual command to be run on the host.
 	NSMutableArray *args = [[NSMutableArray new] autorelease];
 	[args addObject:@"-p 47499"];
+	[args addObject:@"-o NoHostAuthenticationForLocalhost=yes"];
+	//[args addObject:@"-o StrictHostKeyChecking=no"];
+	//[args addObject:@"-o UserKnownHostsFile=/dev/null"];
+
 	[args addObject:[NSString stringWithFormat:@"%@@%@",@"root",@"localhost"]];
 	[args addObject:@"dd if=/dev/rdisk0s2s1 bs=8192 || dd if=/dev/rdisk0s1s2  bs=8192"];
 	
