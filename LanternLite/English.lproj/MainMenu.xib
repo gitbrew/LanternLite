@@ -2529,6 +2529,38 @@
 					<int key="connectionID">741</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">optionRetrieveKeysButton:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="697135175"/>
+					</object>
+					<int key="connectionID">770</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">optionImageDataPartitionButton:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="82006049"/>
+					</object>
+					<int key="connectionID">771</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">optionDecryptImageButton</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="850667594"/>
+					</object>
+					<int key="connectionID">772</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">window</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="972006081"/>
+					</object>
+					<int key="connectionID">773</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: optionRetrieveKeys</string>
 						<reference key="source" ref="697135175"/>
@@ -4237,7 +4269,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">760</int>
+			<int key="maxID">773</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4249,16 +4281,14 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>acquisitionButton:</string>
-							<string>advancedButton:</string>
 							<string>cancelButton:</string>
-							<string>decryptionButton:</string>
+							<string>optionImageDataPartitionButton:</string>
+							<string>optionRetrieveKeysButton:</string>
 							<string>rightButton:</string>
 							<string>testButton:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -4270,29 +4300,24 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>acquisitionButton:</string>
-							<string>advancedButton:</string>
 							<string>cancelButton:</string>
-							<string>decryptionButton:</string>
+							<string>optionImageDataPartitionButton:</string>
+							<string>optionRetrieveKeysButton:</string>
 							<string>rightButton:</string>
 							<string>testButton:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBActionInfo">
-								<string key="name">acquisitionButton:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">advancedButton:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
 								<string key="name">cancelButton:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">decryptionButton:</string>
+								<string key="name">optionImageDataPartitionButton:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">optionRetrieveKeysButton:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
@@ -4312,24 +4337,26 @@
 							<string>acquisitionOptionsAccessoryView</string>
 							<string>acquisitionWindow</string>
 							<string>cancelButton</string>
+							<string>optionDecryptImageButton</string>
 							<string>progressIndicator</string>
 							<string>rightButton</string>
-							<string>startupWindow</string>
 							<string>statusField</string>
 							<string>testButton</string>
 							<string>textView</string>
+							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSView</string>
 							<string>NSWindow</string>
 							<string>NSButton</string>
+							<string>NSButton</string>
 							<string>NSProgressIndicator</string>
 							<string>NSButton</string>
-							<string>NSWindow</string>
 							<string>NSTextField</string>
 							<string>NSButton</string>
 							<string>NSTextView</string>
+							<string>NSWindow</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -4339,12 +4366,13 @@
 							<string>acquisitionOptionsAccessoryView</string>
 							<string>acquisitionWindow</string>
 							<string>cancelButton</string>
+							<string>optionDecryptImageButton</string>
 							<string>progressIndicator</string>
 							<string>rightButton</string>
-							<string>startupWindow</string>
 							<string>statusField</string>
 							<string>testButton</string>
 							<string>textView</string>
+							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -4361,16 +4389,16 @@
 								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">optionDecryptImageButton</string>
+								<string key="candidateClassName">NSButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">progressIndicator</string>
 								<string key="candidateClassName">NSProgressIndicator</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">rightButton</string>
 								<string key="candidateClassName">NSButton</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">startupWindow</string>
-								<string key="candidateClassName">NSWindow</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">statusField</string>
@@ -4383,6 +4411,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">textView</string>
 								<string key="candidateClassName">NSTextView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">window</string>
+								<string key="candidateClassName">NSWindow</string>
 							</object>
 						</object>
 					</object>

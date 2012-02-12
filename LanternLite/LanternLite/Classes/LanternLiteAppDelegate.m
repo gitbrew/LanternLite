@@ -25,6 +25,7 @@
 @synthesize optionImageDataPartition;
 @synthesize optionDecryptImage;
 @synthesize ignoreUSBStateChange;
+@synthesize errorAlert;
 @synthesize acquisitionOptionsAccessoryView;
 
 
@@ -52,10 +53,56 @@
 	[[DTUSBMonitor alloc] initWithVendor:0 product:0 delegate:self];
 	self.device = [[[KFIOSDevice alloc] init] autorelease];
 	
+	[acquisitionWindow setHidesOnDeactivate:NO];
+
 	[testButton setHidden:YES];
 }
 
 # pragma mark - UI -
+
+// updates text in the main UI window
+-(void)uiUpdateOnUSBStateChange
+{
+	NSMutableString * text = [NSMutableString string];
+	if(!ignoreUSBStateChange)
+	{
+		if(!device.usbDevice)
+		{
+			[text appendFormat:@"Please connect a compatible iOS device to computer and enter DFU mode as follows:\n"];
+			[text appendFormat:@"\n"];
+			[text appendFormat:@"1) Power off the device (please wait for the device to shut down completely!)\n"];
+			[text appendFormat:@"2) Hold the Power button for 3 seconds\n"];
+			[text appendFormat:@"3) Keeping the Power button held down, press and hold the Home button\n"];
+			[text appendFormat:@"4) Keep both buttons held for 10 seconds\n"];
+			[text appendFormat:@"5) Release the Power button, still holding the Home button\n"];
+			[text appendFormat:@"6) Hold for 10 seconds\n"];
+			[text appendFormat:@"7) Release the home button\n"];
+			[rightButton setEnabled:NO];
+		}
+		else if(!device.imageable)
+		{
+			[text appendFormat:@"The attached device (%@) is not yet supported\n", device.name];
+			[rightButton setEnabled:NO];
+		}
+		else if([KFIOSDevice checkDFUModeDevice:device.usbDevice])
+		{	
+			[text appendFormat:@"DFU mode has been successfully entered\n"];
+			[text appendFormat:@"\n"];
+			[text appendFormat:@"After clicking next, the custom firmware will be generated and redsn0w will launch to continue the device bootup process\n"];
+			[text appendFormat:@"\n"];
+			[text appendFormat:@"Once redsn0w reports \"Done!\", quit redsn0w to continue\n"];
+			[text appendFormat:@"\n"];
+			[text appendFormat:@"Press NEXT to proceed\n"];
+			[rightButton setEnabled:YES];
+		}
+	}
+	else
+	{
+		[text appendFormat:@"Working\n"];
+		[rightButton setEnabled:NO];
+	}
+	[textView setString:text];
+}
 
 -(IBAction)testButton:(id)sender
 {
@@ -79,7 +126,9 @@
 {
 	if([KFIOSDevice checkDFUModeDevice:device.usbDevice])
 	{
+		// update ui here
 		ignoreUSBStateChange = YES;
+		[self uiUpdateOnUSBStateChange];
 	
 		// get the current date/time in a format we can name a directory
 		NSDate * rightNow = [NSDate date];
@@ -126,68 +175,32 @@
 	}		
 }
 
-// updates text in the main UI window
--(void)uiUpdateOnUSBStateChange
+-(IBAction)optionRetrieveKeysButton:(id)sender
 {
-	NSMutableString * text = [NSMutableString string];
-	if(!ignoreUSBStateChange)
+	if ([sender state] == NSOffState)
 	{
-		if(!device.usbDevice)
-		{
-			[text appendFormat:@"Please connect a compatible iOS device to computer and enter DFU mode as follows:\n"];
-			[text appendFormat:@"\n"];
-			[text appendFormat:@"1) Power off the device (please wait for the device to shut down completely!)\n"];
-			[text appendFormat:@"2) Hold the Power button for 3 seconds\n"];
-			[text appendFormat:@"3) Keeping the Power button held down, press and hold the Home button\n"];
-			[text appendFormat:@"4) Keep both buttons held for 10 seconds\n"];
-			[text appendFormat:@"5) Release the Power button, still holding the Home button\n"];
-			[text appendFormat:@"6) Hold for 10 seconds\n"];
-			[text appendFormat:@"7) Release the home button\n"];
-			[rightButton setEnabled:NO];
-		}
-		else if(!device.imageable)
-		{
-			[text appendFormat:@"The attached device (%@) is not yet supported\n", device.name];
-			[rightButton setEnabled:NO];
-		}
-		else if([KFIOSDevice checkDFUModeDevice:device.usbDevice])
-		{	
-			[text appendFormat:@"DFU mode has been successfully entered\n"];
-			[text appendFormat:@"\n"];
-			[text appendFormat:@"After clicking next, the custom firmware will be generated and redsn0w will launch to continue the device bootup process\n"];
-			[text appendFormat:@"\n"];
-			[text appendFormat:@"Once redsn0w reports \"Done!\", quit redsn0w to continue\n"];
-			[text appendFormat:@"\n"];
-			[text appendFormat:@"Press NEXT to proceed\n"];
-			[rightButton setEnabled:YES];
-		}
+		[optionDecryptImageButton setState:NSOffState];
+		self.optionDecryptImage = NO;
 	}
-	else
+	if (([sender state] == NSOnState) && (optionImageDataPartition))
 	{
-		[text appendFormat:@"Working\n"];
-		[rightButton setEnabled:NO];
+		[optionDecryptImageButton setState:NSOnState];
+		self.optionDecryptImage = YES;
 	}
-	[textView setString:text];
 }
 
-- (void)uiReset
+-(IBAction)optionImageDataPartitionButton:(id)sender
 {
-	// go back to the beginning?
-	[progressIndicator setDoubleValue:0.0];
-	[progressIndicator setHidden:YES];
-	[statusField setStringValue:@""];
-	[cancelButton setEnabled:NO];
-	
-	ignoreUSBStateChange = NO;
-	
-	// kill the python scripts (if they're running)
-	[usbMuxTask kill];
-	[tcpRelayTask kill];
-	[usbMuxTask release];
-	[tcpRelayTask release];
-	tcpRelayTask = nil;
-	usbMuxTask = nil;
-	
+	if ([sender state] == NSOffState)
+	{
+		[optionDecryptImageButton setState:NSOffState];
+		self.optionDecryptImage = NO;
+	}
+	if (([sender state] == NSOnState) && (optionRetrieveKeys))
+	{
+		[optionDecryptImageButton setState:NSOnState];
+		self.optionDecryptImage = YES;
+	}
 }
 
 # pragma mark - USB Stuff -
@@ -281,6 +294,7 @@
 	
 	NSError * error = nil;
 	acquisitionLog = [NSFileHandle fileHandleForWritingToURL:[baseDir URLByAppendingPathComponent:@"AcquisitionLog.txt"] error:&error];
+	[acquisitionLog retain];
 	if(error)
 	{
 		NSLog(@"couldn't open Acquisition Log");
@@ -341,7 +355,7 @@
 	{
 		KFTask * nextTask = [taskQueue objectAtIndex:0];
 		[nextTask start];
-		[cancelButton setEnabled:YES];
+		//[cancelButton setEnabled:YES];
 	}
 	else
 	{
@@ -364,7 +378,9 @@
 		if(s_chime) [s_chime play];
 		
 		[statusField setStringValue:@"Finished!"];
-		[self performSelector:@selector(uiReset) withObject:nil afterDelay:1.0];
+		[textView setString:@""];
+		[progressIndicator setHidden:YES];
+		[cancelButton setEnabled:NO];
 		
 		if(NSClassFromString(@"GrowlApplicationBridge"))
 		{
@@ -377,7 +393,6 @@
 			 isSticky:NO
 			 clickContext:@"OrderFront"];
 		}
-		[cancelButton setEnabled:NO];
 	}
 }
 
@@ -436,7 +451,6 @@
 	if(theTask.errorDescription || theTask.cancelled)
 	{
 		[taskQueue removeAllObjects];
-		[self uiReset];
 		
 		if(!theTask.cancelled)
 		{
@@ -459,12 +473,14 @@
 			}				
 			
 			// report the error
-			NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+			self.errorAlert = [NSString stringWithString:@"YES"];
+			
+			NSAlert * alert = [[[NSAlert alloc] init] autorelease];
 			[alert addButtonWithTitle:@"OK"];
 			[alert setMessageText:@"The task could not be completed"];
 			[alert setInformativeText:theTask.errorDescription];
 			[alert setAlertStyle:NSWarningAlertStyle];
-			[alert beginSheetModalForWindow:[self acquisitionWindow] modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
+			[alert beginSheetModalForWindow:[self acquisitionWindow] modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:self.errorAlert];
 		}
 	}
 	else
@@ -474,14 +490,15 @@
 	}
 }
 
-- (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode
-		contextInfo:(void *)contextInfo
+- (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
 {
+	if ([(NSString *)contextInfo isEqualToString:@"YES"])
+	{
+		[NSApp terminate:nil];
+	}
 }
 
 #pragma mark - Growl Support -
-
-// TODO: Needs updating to support new Growl API
 
 - (NSDictionary *) registrationDictionaryForGrowl
 {

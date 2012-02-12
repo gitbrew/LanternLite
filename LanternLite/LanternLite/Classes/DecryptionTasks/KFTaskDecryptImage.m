@@ -51,6 +51,7 @@
 	else
 	{
 		[self notifyErrorAndAbort:@"Unable to read data partition image"];
+		return;
 	}
 	
 	// Create log files and open for writing

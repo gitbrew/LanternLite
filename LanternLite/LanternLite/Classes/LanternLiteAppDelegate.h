@@ -33,17 +33,20 @@
 	IBOutlet NSView * acquisitionOptionsAccessoryView;
 	
 	// Acquisition options
+	
 	BOOL optionBootDevice;
 	BOOL optionRetrieveKeys;
 	BOOL optionImageDataPartition;
 	BOOL optionDecryptImage;
+	IBOutlet NSButton * optionDecryptImageButton;
 
 	BOOL ignoreUSBStateChange;
+	
+	NSString * errorAlert;
 	
 	KFIOSDevice * device;
 	NSMutableArray * taskQueue;
 
-	KFExec * usbMuxTask;
 	KFExec * tcpRelayTask;
 	
 	NSFileHandle * acquisitionLog;
@@ -56,6 +59,7 @@
 @property (assign) BOOL optionImageDataPartition;
 @property (assign) BOOL optionDecryptImage;
 @property (assign) BOOL ignoreUSBStateChange;
+@property (nonatomic, retain) NSString * errorAlert;
 @property (retain) KFIOSDevice * device;
 @property (nonatomic, retain) NSMutableArray * taskQueue;
 @property (nonatomic, retain) NSFileHandle * acquisitionLog;
@@ -63,6 +67,8 @@
 -(IBAction)testButton:(id)sender;
 -(IBAction)cancelButton:(id)sender;
 -(IBAction)rightButton:(id)sender;
+-(IBAction)optionRetrieveKeysButton:(id)sender;
+-(IBAction)optionImageDataPartitionButton:(id)sender;
 
 -(void)queueTasks:(KFIOSDevice *)theDevice targetDir:(NSURL *)baseDir;
 -(void)startNextTask;

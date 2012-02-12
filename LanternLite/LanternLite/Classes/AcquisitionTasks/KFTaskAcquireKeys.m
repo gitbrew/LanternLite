@@ -88,7 +88,10 @@
 	[self notifyBeginSubtask:@"Fetching keys" indefinite:YES];
 	NSData * keyData = [self sshDoCommand:@"cat /var/root/keys.plist"];
 	if(keyData == nil)
+	{
 		[self notifyErrorAndAbort:@"didn't get keys.plist from device"];
+		return;
+	}
 	
 	NSPropertyListFormat format = 0;
 	id obj = [NSPropertyListSerialization propertyListWithData:keyData options:0 format:&format error:nil];

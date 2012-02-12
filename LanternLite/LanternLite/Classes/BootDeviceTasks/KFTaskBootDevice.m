@@ -35,11 +35,13 @@
 	{
 		NSLog(@"missing %@", [desktopPath URLByAppendingPathComponent:@"redsn0w.app"]);
 		[self notifyErrorAndAbort:@"redsn0w not found"];
+		return;
 	}
 	if(![fm fileExistsAtPath:[[desktopPath URLByAppendingPathComponent:ipswName] path]])
 	{
 		NSLog(@"missing %@", [desktopPath URLByAppendingPathComponent:ipswName]);
 		[self notifyErrorAndAbort:@"IPSW not found"];
+		return;
 	} 
 	
 	// get paths to components of redsn0w bundle
@@ -65,6 +67,7 @@
 	else
 	{
 		[self notifyErrorAndAbort:@"Unable to read Keys.plist"];
+		return;
 	}
 	
 	// extract and patch kernelcache and restore ramdisk
@@ -97,6 +100,7 @@
 	if(![kernelPatcherStatus isEqualToString:@"OK"])
 	{
 		[self notifyErrorAndAbort:@"Kernel patching failed"];
+		return;
 	}
 	
 	// ramdiskInfos[1]: filename of restore ramdisk

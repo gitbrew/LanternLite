@@ -85,6 +85,15 @@
 
 	self.errorDescription = theError;
 	self.abort = YES;
+	
+	if(!notifiedFinish)
+	{
+		if(delegate && [delegate respondsToSelector:@selector(taskDidFinish:)])
+		{
+			[delegate performSelectorOnMainThread:@selector(taskDidFinish:) withObject:self waitUntilDone:NO];
+		}
+		notifiedFinish = YES;
+	}
 }
 
 -(void)notifyBeginTask

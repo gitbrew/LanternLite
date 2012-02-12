@@ -129,9 +129,10 @@
 	}
 	[writeHandle retain];
 	
-	// figure out how many 1K blocks there are using df
+	// figure out how many 1K blocks there are using df (need a MUCH better way of doing this)
 	expectedSize = 0;
 	receivedSize = 0;
+	[self sshDoCommand:@"mount_hfs /dev/disk0s1s2 /mnt2 || mount_hfs /dev/disk0s2s1 /mnt2"];
 	NSData * dfOutput = [self sshDoCommand:@"df"];
 	NSString * dfResult = [[[NSString alloc] initWithData:dfOutput encoding:NSUTF8StringEncoding] autorelease];
 	NSLog(@"%@", dfResult);
